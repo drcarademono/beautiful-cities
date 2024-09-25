@@ -1,0 +1,20 @@
+{
+    "ModTitle": "Beautiful Cities - Archaeologists Guild Patch",
+    "ModVersion": "1.0",
+    "ModAuthor": "carademono & Hazelnut",
+    "ContactInfo": "Lysandus' Tomb Discord server",
+    "DFUnity_Version": "1.0.0",
+    "ModDescription": "Patches Beautiful Cities to add Archaeologists Guild compatibility",
+    "GUID": "54551a0c-45f3-41b7-888c-2b3259ab3ad7",
+    "Files": [
+        "Assets/Game/Mods/beautiful-cities/beautiful-cities-archaeologists-patch.dfmod.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/ArchaeologistsPatch/PAWNAL03.RMB.json"
+    ],
+    "Dependencies": [
+        {
+            "Name": "beautiful cities",
+            "IsOptional": false,
+            "IsPeer": false
+        }
+    ]
+}
