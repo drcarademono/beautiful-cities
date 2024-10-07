@@ -25,7 +25,7 @@
                 "LocationName": "Longwall"
             }
         },
-        "BuildingCount": 320,
+        "BuildingCount": 321,
         "Buildings": [
             {
                 "NameSeed": 11878,
@@ -2333,11 +2333,19 @@
             },
             {
                 "NameSeed": 8171,
-                "FactionId": 108,
+                "FactionId": 0,
                 "Sector": 1084,
                 "LocationId": 11317,
                 "BuildingType": "House2",
                 "Quality": 14
+            },
+            {
+                "NameSeed": 1629,
+                "FactionId": 108,
+                "Sector": 1084,
+                "LocationId": 11317,
+                "BuildingType": "House2",
+                "Quality": 7
             },
             {
                 "NameSeed": 26324,
@@ -2346,14 +2354,6 @@
                 "LocationId": 11317,
                 "BuildingType": "Tavern",
                 "Quality": 15
-            },
-            {
-                "NameSeed": 1629,
-                "FactionId": 0,
-                "Sector": 1084,
-                "LocationId": 11317,
-                "BuildingType": "House2",
-                "Quality": 7
             },
             {
                 "NameSeed": 9371,
@@ -2423,6 +2423,14 @@
                 "NameSeed": 29824,
                 "FactionId": 0,
                 "Sector": 1084,
+                "LocationId": 11317,
+                "BuildingType": "House2",
+                "Quality": 7
+            },
+            {
+                "NameSeed": 2187,
+                "FactionId": 0,
+                "Sector": 1087,
                 "LocationId": 11317,
                 "BuildingType": "House2",
                 "Quality": 7
