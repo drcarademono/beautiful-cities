@@ -1105,8 +1105,8 @@
                         "IsFlipped": false
                     },
                     {
-                        "TileBitfield": 2,
-                        "TextureRecord": 2,
+                        "TileBitfield": 12,
+                        "TextureRecord": 12,
                         "IsRotated": false,
                         "IsFlipped": false
                     },
@@ -1195,14 +1195,14 @@
                         "IsFlipped": false
                     },
                     {
-                        "TileBitfield": 2,
-                        "TextureRecord": 2,
+                        "TileBitfield": 12,
+                        "TextureRecord": 12,
                         "IsRotated": false,
                         "IsFlipped": false
                     },
                     {
-                        "TileBitfield": 2,
-                        "TextureRecord": 2,
+                        "TileBitfield": 10,
+                        "TextureRecord": 10,
                         "IsRotated": false,
                         "IsFlipped": false
                     },
@@ -1387,15 +1387,15 @@
                         "IsFlipped": false
                     },
                     {
-                        "TileBitfield": 2,
-                        "TextureRecord": 2,
-                        "IsRotated": false,
+                        "TileBitfield": 76,
+                        "TextureRecord": 12,
+                        "IsRotated": true,
                         "IsFlipped": false
                     },
                     {
-                        "TileBitfield": 2,
-                        "TextureRecord": 2,
-                        "IsRotated": false,
+                        "TileBitfield": 74,
+                        "TextureRecord": 10,
+                        "IsRotated": true,
                         "IsFlipped": false
                     },
                     {
@@ -1489,9 +1489,9 @@
                         "IsFlipped": false
                     },
                     {
-                        "TileBitfield": 2,
-                        "TextureRecord": 2,
-                        "IsRotated": false,
+                        "TileBitfield": 76,
+                        "TextureRecord": 12,
+                        "IsRotated": true,
                         "IsFlipped": false
                     },
                     {
@@ -10040,11 +10040,11 @@
                             "XPos": 296,
                             "YPos": -129,
                             "ZPos": 72,
+                            "XScale": 0.9,
+                            "ZScale": 0.9,
                             "XRotation": 0,
                             "YRotation": 0,
-                            "ZRotation": 0,
-                            "XScale": 0.9,
-                            "ZScale": 0.9
+                            "ZRotation": 0
                         },
                         {
                             "ModelId": "45076",
@@ -10053,11 +10053,11 @@
                             "XPos": 296,
                             "YPos": -15,
                             "ZPos": 72,
+                            "XScale": 0.9,
+                            "ZScale": 0.9,
                             "XRotation": 0,
                             "YRotation": 0,
-                            "ZRotation": 0,
-                            "XScale": 0.9,
-                            "ZScale": 0.9
+                            "ZRotation": 0
                         },
                         {
                             "ModelId": "45076",
@@ -10066,11 +10066,11 @@
                             "XPos": 296,
                             "YPos": 99,
                             "ZPos": 72,
+                            "XScale": 0.9,
+                            "ZScale": 0.9,
                             "XRotation": 0,
                             "YRotation": 0,
-                            "ZRotation": 0,
-                            "XScale": 0.9,
-                            "ZScale": 0.9
+                            "ZRotation": 0
                         }
                     ],
                     "BlockFlatObjectRecords": [],
