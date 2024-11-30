@@ -1,6 +1,6 @@
 {
     "ModTitle": "Beautiful Cities of Daggerfall",
-    "ModVersion": "0.2.5",
+    "ModVersion": "0.2.6",
     "ModAuthor": "carademono",
     "ContactInfo": "Lysandus' Tomb Discord server",
     "DFUnity_Version": "1.1.1",
@@ -987,6 +987,11 @@
         },
         {
             "Name": "windmills of daggerfall",
+            "IsOptional": false,
+            "IsPeer": false
+        },
+        {
+            "Name": "finding my religion",
             "IsOptional": false,
             "IsPeer": false
         }
