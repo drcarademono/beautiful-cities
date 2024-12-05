@@ -260,12 +260,10 @@
                     "Quality": 15
                 },
                 {
-                    "NameSeed": 0,
                     "FactionId": 0,
-                    "Sector": 0,
-                    "LocationId": 0,
-                    "BuildingType": "House2",
-                    "Quality": 19
+                    "BuildingType": 18,
+                    "Quality": 19,
+                    "NameSeed": 0
                 },
                 {
                     "NameSeed": 0,
@@ -13765,7 +13763,7 @@
                             "ZPos": 208,
                             "TextureArchive": 184,
                             "TextureRecord": 24,
-                            "FactionID": 302,
+                            "FactionID": 0,
                             "Flags": 1
                         }
                     ],
@@ -13776,8 +13774,7 @@
                             "YPos": -45,
                             "ZPos": -129,
                             "YRotation": 1024,
-                            "OpenRotation": 94,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 94
                         },
                         {
                             "Position": 35223,
@@ -13785,8 +13782,7 @@
                             "YPos": -45,
                             "ZPos": 127,
                             "YRotation": 1024,
-                            "OpenRotation": 94,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 94
                         },
                         {
                             "Position": 35242,
@@ -13794,8 +13790,7 @@
                             "YPos": -45,
                             "ZPos": 87,
                             "YRotation": 1536,
-                            "OpenRotation": 94,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 94
                         },
                         {
                             "Position": 35261,
@@ -13803,8 +13798,7 @@
                             "YPos": -45,
                             "ZPos": -129,
                             "YRotation": 1024,
-                            "OpenRotation": 94,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 94
                         },
                         {
                             "Position": 35280,
@@ -13812,8 +13806,7 @@
                             "YPos": -45,
                             "ZPos": -169,
                             "YRotation": 1536,
-                            "OpenRotation": 94,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 94
                         },
                         {
                             "Position": 35299,
@@ -13821,11 +13814,11 @@
                             "YPos": -45,
                             "ZPos": -169,
                             "YRotation": 1536,
-                            "OpenRotation": 94,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 94
                         }
                     ]
-                }
+                },
+                "FactionId": 0
             },
             {
                 "XPos": 1216,

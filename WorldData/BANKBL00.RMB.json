@@ -172,12 +172,10 @@
             ],
             "BuildingDataList": [
                 {
-                    "NameSeed": 0,
                     "FactionId": 0,
-                    "Sector": 0,
-                    "LocationId": 0,
-                    "BuildingType": "House2",
-                    "Quality": 10
+                    "BuildingType": 18,
+                    "Quality": 10,
+                    "NameSeed": 0
                 },
                 {
                     "NameSeed": 0,
@@ -7329,7 +7327,7 @@
                             "ZPos": 184,
                             "TextureArchive": 182,
                             "TextureRecord": 20,
-                            "FactionID": 388,
+                            "FactionID": 0,
                             "Flags": 9
                         }
                     ],
@@ -7340,8 +7338,7 @@
                             "YPos": -45,
                             "ZPos": -65,
                             "YRotation": 1024,
-                            "OpenRotation": 91,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 91
                         },
                         {
                             "Position": 9078,
@@ -7349,8 +7346,7 @@
                             "YPos": -45,
                             "ZPos": 191,
                             "YRotation": 1024,
-                            "OpenRotation": 91,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 91
                         },
                         {
                             "Position": 9097,
@@ -7358,8 +7354,7 @@
                             "YPos": -45,
                             "ZPos": 151,
                             "YRotation": 1536,
-                            "OpenRotation": 91,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 91
                         },
                         {
                             "Position": 9116,
@@ -7367,11 +7362,11 @@
                             "YPos": -45,
                             "ZPos": -23,
                             "YRotation": 512,
-                            "OpenRotation": 91,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 91
                         }
                     ]
-                }
+                },
+                "FactionId": 0
             },
             {
                 "XPos": 1728,

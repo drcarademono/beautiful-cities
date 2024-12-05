@@ -172,12 +172,10 @@
             ],
             "BuildingDataList": [
                 {
-                    "NameSeed": 0,
                     "FactionId": 0,
-                    "Sector": 0,
-                    "LocationId": 0,
-                    "BuildingType": "House2",
-                    "Quality": 5
+                    "BuildingType": 18,
+                    "Quality": 5,
+                    "NameSeed": 0
                 },
                 {
                     "NameSeed": 0,
@@ -7102,7 +7100,7 @@
                             "ZPos": 232,
                             "TextureArchive": 182,
                             "TextureRecord": 10,
-                            "FactionID": 360,
+                            "FactionID": 0,
                             "Flags": 33
                         }
                     ],
@@ -7113,8 +7111,7 @@
                             "YPos": -45,
                             "ZPos": -127,
                             "YRotation": 0,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 7869,
@@ -7122,11 +7119,11 @@
                             "YPos": -45,
                             "ZPos": -127,
                             "YRotation": 0,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         }
                     ]
-                }
+                },
+                "FactionId": 0
             },
             {
                 "XPos": 3648,

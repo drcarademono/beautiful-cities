@@ -204,28 +204,22 @@
                     "Quality": 7
                 },
                 {
-                    "NameSeed": 0,
                     "FactionId": 0,
-                    "Sector": 0,
-                    "LocationId": 0,
-                    "BuildingType": "House2",
-                    "Quality": 7
+                    "BuildingType": 18,
+                    "Quality": 7,
+                    "NameSeed": 0
                 },
                 {
-                    "NameSeed": 0,
                     "FactionId": 0,
-                    "Sector": 0,
-                    "LocationId": 0,
-                    "BuildingType": "House2",
-                    "Quality": 4
+                    "BuildingType": 18,
+                    "Quality": 4,
+                    "NameSeed": 0
                 },
                 {
-                    "NameSeed": 0,
                     "FactionId": 0,
-                    "Sector": 0,
-                    "LocationId": 0,
-                    "BuildingType": "House2",
-                    "Quality": 4
+                    "BuildingType": 18,
+                    "Quality": 4,
+                    "NameSeed": 0
                 },
                 {
                     "NameSeed": 0,
@@ -260,12 +254,10 @@
                     "Quality": 12
                 },
                 {
-                    "NameSeed": 0,
                     "FactionId": 0,
-                    "Sector": 0,
-                    "LocationId": 0,
-                    "BuildingType": "House3",
-                    "Quality": 4
+                    "BuildingType": 19,
+                    "Quality": 4,
+                    "NameSeed": 0
                 },
                 {
                     "NameSeed": 0,
@@ -10076,7 +10068,7 @@
                             "ZPos": 304,
                             "TextureArchive": 182,
                             "TextureRecord": 10,
-                            "FactionID": 360,
+                            "FactionID": 0,
                             "Flags": 41
                         }
                     ],
@@ -10087,8 +10079,7 @@
                             "YPos": -45,
                             "ZPos": -127,
                             "YRotation": 0,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 20040,
@@ -10096,8 +10087,7 @@
                             "YPos": -45,
                             "ZPos": 129,
                             "YRotation": 0,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 20059,
@@ -10105,8 +10095,7 @@
                             "YPos": -45,
                             "ZPos": 87,
                             "YRotation": 1536,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 20078,
@@ -10114,8 +10103,7 @@
                             "YPos": -45,
                             "ZPos": 257,
                             "YRotation": 0,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 20097,
@@ -10123,8 +10111,7 @@
                             "YPos": -45,
                             "ZPos": 343,
                             "YRotation": 1536,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 20116,
@@ -10132,8 +10119,7 @@
                             "YPos": -45,
                             "ZPos": -1,
                             "YRotation": 1024,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 20135,
@@ -10141,11 +10127,11 @@
                             "YPos": -45,
                             "ZPos": -215,
                             "YRotation": 512,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         }
                     ]
-                }
+                },
+                "FactionId": 0
             },
             {
                 "XPos": 192,
@@ -10596,7 +10582,7 @@
                             "ZPos": -88,
                             "TextureArchive": 182,
                             "TextureRecord": 29,
-                            "FactionID": 406,
+                            "FactionID": 0,
                             "Flags": 9
                         }
                     ],
@@ -10607,8 +10593,7 @@
                             "YPos": -45,
                             "ZPos": 23,
                             "YRotation": 1536,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 22303,
@@ -10616,11 +10601,11 @@
                             "YPos": -45,
                             "ZPos": 105,
                             "YRotation": 512,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         }
                     ]
-                }
+                },
+                "FactionId": 0
             },
             {
                 "XPos": 1856,
@@ -11071,7 +11056,7 @@
                             "ZPos": -88,
                             "TextureArchive": 182,
                             "TextureRecord": 29,
-                            "FactionID": 406,
+                            "FactionID": 0,
                             "Flags": 9
                         }
                     ],
@@ -11082,8 +11067,7 @@
                             "YPos": -45,
                             "ZPos": 23,
                             "YRotation": 1536,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         },
                         {
                             "Position": 24470,
@@ -11091,11 +11075,11 @@
                             "YPos": -45,
                             "ZPos": 105,
                             "YRotation": 512,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         }
                     ]
-                }
+                },
+                "FactionId": 0
             },
             {
                 "XPos": 2493,
@@ -13867,7 +13851,7 @@
                             "ZPos": -80,
                             "TextureArchive": 182,
                             "TextureRecord": 29,
-                            "FactionID": 406,
+                            "FactionID": 0,
                             "Flags": 1
                         }
                     ],
@@ -13878,11 +13862,11 @@
                             "YPos": -45,
                             "ZPos": 23,
                             "YRotation": 1536,
-                            "OpenRotation": 90,
-                            "DoorModelIndex": 0
+                            "OpenRotation": 90
                         }
                     ]
-                }
+                },
+                "FactionId": 0
             },
             {
                 "XPos": 3584,
