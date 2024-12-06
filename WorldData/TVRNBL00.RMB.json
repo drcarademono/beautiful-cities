@@ -236,10 +236,12 @@
                     "Quality": 5
                 },
                 {
+                    "NameSeed": 0,
                     "FactionId": 0,
-                    "BuildingType": 19,
-                    "Quality": 4,
-                    "NameSeed": 0
+                    "Sector": 0,
+                    "LocationId": 0,
+                    "BuildingType": "House3",
+                    "Quality": 4
                 },
                 {
                     "NameSeed": 0,
@@ -250,10 +252,12 @@
                     "Quality": 6
                 },
                 {
+                    "NameSeed": 0,
                     "FactionId": 0,
-                    "BuildingType": 18,
-                    "Quality": 4,
-                    "NameSeed": 0
+                    "Sector": 0,
+                    "LocationId": 0,
+                    "BuildingType": "House2",
+                    "Quality": 4
                 },
                 {
                     "NameSeed": 0,
@@ -14674,7 +14678,7 @@
                             "ZPos": -80,
                             "TextureArchive": 182,
                             "TextureRecord": 29,
-                            "FactionID": 0,
+                            "FactionID": 406,
                             "Flags": 1
                         }
                     ],
@@ -14685,11 +14689,11 @@
                             "YPos": -45,
                             "ZPos": 23,
                             "YRotation": 1536,
-                            "OpenRotation": 90
+                            "OpenRotation": 90,
+                            "DoorModelIndex": 0
                         }
                     ]
-                },
-                "FactionId": 0
+                }
             },
             {
                 "XPos": 2498,
@@ -15622,7 +15626,7 @@
                             "ZPos": -88,
                             "TextureArchive": 182,
                             "TextureRecord": 29,
-                            "FactionID": 0,
+                            "FactionID": 406,
                             "Flags": 9
                         }
                     ],
@@ -15633,7 +15637,8 @@
                             "YPos": -45,
                             "ZPos": 23,
                             "YRotation": 1536,
-                            "OpenRotation": 90
+                            "OpenRotation": 90,
+                            "DoorModelIndex": 0
                         },
                         {
                             "Position": 42596,
@@ -15641,11 +15646,11 @@
                             "YPos": -45,
                             "ZPos": 105,
                             "YRotation": 512,
-                            "OpenRotation": 90
+                            "OpenRotation": 90,
+                            "DoorModelIndex": 0
                         }
                     ]
-                },
-                "FactionId": 0
+                }
             },
             {
                 "XPos": 576,
