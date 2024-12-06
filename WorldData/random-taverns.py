@@ -96,7 +96,7 @@ def process_rmb_files(buildings_dir="buildings", taverns_dir="taverns"):
     TAVERN_MODEL_IDS = {248, 249, 250, 251, 252, 253, 428, 429, 430, 431, 432}
 
     # Find all tavern files and group them by ModelId
-    tavern_files = [file for file in os.listdir(taverns_dir) if re.match(r"tavern-(\d+)-\d+\.json", file)]
+    tavern_files = [file for file in os.listdir(taverns_dir) if re.match(r"tavern-(\d+)-\d+\.json", file) and not file.endswith(".meta")]
     taverns_by_model_id = {}
     for tavern_file in tavern_files:
         match = re.match(r"tavern-(\d+)-\d+\.json", tavern_file)
@@ -105,7 +105,7 @@ def process_rmb_files(buildings_dir="buildings", taverns_dir="taverns"):
             taverns_by_model_id.setdefault(model_id, []).append(os.path.join(taverns_dir, tavern_file))
 
     # Process all RMB.json files
-    rmb_files = [file for file in os.listdir() if file.endswith(".RMB.json")]
+    rmb_files = [file for file in os.listdir() if file.endswith(".RMB.json") and not file.endswith(".meta")]
 
     for rmb_file in rmb_files:
         print(f"Processing file: {rmb_file}")
@@ -124,7 +124,10 @@ def process_rmb_files(buildings_dir="buildings", taverns_dir="taverns"):
                 if model_id in TAVERN_MODEL_IDS:
                     # Check for a corresponding building file
                     building_file_pattern = f"{rmb_file.replace('.json', '')}-*-building{i}.json"
-                    matching_building_files = [file for file in os.listdir(buildings_dir) if re.fullmatch(building_file_pattern, file)]
+                    matching_building_files = [
+                        file for file in os.listdir(buildings_dir)
+                        if re.fullmatch(building_file_pattern, file) and not file.endswith(".meta")]
+
 
                     if matching_building_files:
                         print(f"Found corresponding building file for subrecord {i}, skipping replacement.")

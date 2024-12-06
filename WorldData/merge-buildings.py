@@ -101,7 +101,7 @@ def replace_building(rmb_file, building_file, position):
 
 def process_directory():
     # Find all *.RMB.json files
-    rmb_files = [file for file in os.listdir() if file.endswith(".RMB.json")]
+    rmb_files = [file for file in os.listdir() if file.endswith(".RMB.json") and not file.endswith(".meta")]
 
     # Ensure the buildings subdirectory exists
     buildings_dir = "buildings"
@@ -110,7 +110,9 @@ def process_directory():
         return
 
     # Find all building replacement files in the buildings subdirectory
-    building_files = [file for file in os.listdir(buildings_dir) if re.match(r".*\.RMB-\d+-building\d+\.json", file)]
+    building_files = [
+    file for file in os.listdir(buildings_dir)
+    if re.match(r".*\.RMB-\d+-building\d+\.json", file) and not file.endswith(".meta")]
 
     # Group building replacement files by their RMB prefix
     building_replacements = {}
