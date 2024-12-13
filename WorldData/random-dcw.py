@@ -2,6 +2,8 @@ import json
 import os
 import re
 import random
+import fnmatch
+
 
 
 def preprocess_json(raw_content, placeholder="__BACKSLASH__"):
@@ -124,6 +126,7 @@ def process_rmb_files(buildings_dir="dcw", walls_dir="wall"):
 
         # Use one-prefix name for building file checks
         one_prefix_name = get_one_prefix_name(rmb_file)
+        print(f"DEBUG: One-prefix equivalent for {rmb_file} is {one_prefix_name}")
 
         # Iterate through SubRecords
         sub_records = rmb_data["RmbBlock"].get("SubRecords", [])
@@ -136,13 +139,19 @@ def process_rmb_files(buildings_dir="dcw", walls_dir="wall"):
                 if model_id in WALL_MODEL_IDS:
                     # Check for a corresponding building file
                     building_file_pattern = f"{one_prefix_name.replace('.json', '')}-*-building{i}.json"
+                    print(f"DEBUG: Searching for building files matching pattern: {building_file_pattern}")
                     matching_building_files = [
                         file for file in os.listdir(buildings_dir)
-                        if re.fullmatch(building_file_pattern, file) and not file.endswith(".meta")]
+                        if fnmatch.fnmatch(file, f"{one_prefix_name.replace('.json', '')}-*-building{i}.json")
+                    ]
 
+                    # Log found building files
                     if matching_building_files:
-                        print(f"Found corresponding building file for subrecord {i}, skipping replacement.")
+                        print(f"DEBUG: Found building files for subrecord {i}: {matching_building_files}")
+                        print(f"Skipping replacement for subrecord {i} in {rmb_file}.")
                         continue
+                    else:
+                        print(f"DEBUG: No building files found for subrecord {i} in {rmb_file}.")
 
                     # Assign a random wall
                     if model_id in walls_by_model_id:

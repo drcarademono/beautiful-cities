@@ -3,6 +3,30 @@ import json
 from glob import glob
 
 
+def preprocess_json(file_path, placeholder="_BACKSLASH_"):
+    """Replace backslashes with a placeholder in the file."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        content = content.replace("\\", placeholder)
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(content)
+    except Exception as e:
+        print(f"Error preprocessing {file_path}: {e}")
+
+
+def restore_backslashes(file_path, placeholder="_BACKSLASH_"):
+    """Restore backslashes from the placeholder in the file."""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        content = content.replace(placeholder, "\\")
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(content)
+    except Exception as e:
+        print(f"Error restoring backslashes in {file_path}: {e}")
+
+
 def load_json(file_path):
     """Load JSON data from a file."""
     try:
@@ -25,10 +49,7 @@ def save_json(file_path, data):
 
 
 def extract_model_ids(sub_records, relevant_model_ids):
-    """
-    Extract a list of ModelId values from SubRecords > Exterior > Block3dObjectRecords,
-    filtered by relevant ModelIds.
-    """
+    """Extract a list of ModelId values from SubRecords > Exterior > Block3dObjectRecords."""
     model_ids = []
     for record in sub_records:
         exterior = record.get("Exterior", {})
@@ -45,11 +66,19 @@ def reorder_by_model_ids(original_file, two_prefix_file):
     Reorder BuildingDataList and SubRecords in two-prefix RMB.json
     to match the order of relevant ModelIds in the original RMB.json.
     """
+    placeholder = "_BACKSLASH_"
+
+    # Preprocess both files to replace backslashes
+    preprocess_json(original_file, placeholder)
+    preprocess_json(two_prefix_file, placeholder)
+
     original_data = load_json(original_file)
     two_prefix_data = load_json(two_prefix_file)
 
     if not original_data or not two_prefix_data:
         print(f"Skipping {two_prefix_file} due to errors in loading JSON files.")
+        restore_backslashes(original_file, placeholder)
+        restore_backslashes(two_prefix_file, placeholder)
         return
 
     # Define relevant ModelIds
@@ -116,6 +145,10 @@ def reorder_by_model_ids(original_file, two_prefix_file):
 
     except Exception as e:
         print(f"Error reordering {two_prefix_file}: {e}")
+
+    # Restore original backslashes in both files
+    restore_backslashes(original_file, placeholder)
+    restore_backslashes(two_prefix_file, placeholder)
 
 
 def find_original_rmb(json_file):
