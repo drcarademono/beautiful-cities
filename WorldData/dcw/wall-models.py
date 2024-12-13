@@ -2,10 +2,8 @@ import json
 import os
 import shutil
 
-
 # Tavern ModelIds
 WALL_MODEL_IDS = {444, 445, 446}
-
 
 def load_json_file(file_path):
     """
@@ -22,27 +20,26 @@ def load_json_file(file_path):
         print(f"Error: Unexpected error while reading file '{file_path}'. {e}")
     return None
 
-
-def get_wall_model_id(data):
+def get_wall_info(data):
     """
     Checks if a building JSON contains any wall ModelId in RmbSubRecord > Exterior > Block3dObjectRecords.
+    Extracts the ModelId, YRotation, and VariantNumber if available.
     :param data: Parsed JSON data.
-    :return: The first matching wall ModelId, or None if no match is found.
+    :return: A tuple (ModelId, YRotation, VariantNumber) or None if no wall ModelId is found.
     """
     try:
-        block3d_object_records = (
-            data.get("RmbSubRecord", {})
-                .get("Exterior", {})
-                .get("Block3dObjectRecords", [])
-        )
+        rmb_sub_record = data.get("RmbSubRecord", {})
+        y_rotation = rmb_sub_record.get("YRotation", 0)
+        block3d_object_records = rmb_sub_record.get("Exterior", {}).get("Block3dObjectRecords", [])
+
         for record in block3d_object_records:
             model_id = int(record.get("ModelId", -1))
             if model_id in WALL_MODEL_IDS:
-                return model_id
+                variant_number = record.get("VariantNumber", 0)
+                return model_id, y_rotation, variant_number
     except Exception as e:
         print(f"Error processing data structure: {e}")
     return None
-
 
 def process_building_files(directory=".", output_directory="wall"):
     """
@@ -58,7 +55,7 @@ def process_building_files(directory=".", output_directory="wall"):
     os.makedirs(output_directory, exist_ok=True)
 
     building_files = [file for file in os.listdir(directory) if "building" in file and file.endswith(".json")]
-    wall_counts = {model_id: 0 for model_id in WALL_MODEL_IDS}
+    wall_counts = {}
 
     for file in building_files:
         file_path = os.path.join(directory, file)
@@ -69,21 +66,25 @@ def process_building_files(directory=".", output_directory="wall"):
         if not data:
             continue
 
-        # Check if the file contains a wall ModelId
-        wall_model_id = get_wall_model_id(data)
-        if wall_model_id is not None:
-            # Increment the counter for this ModelId
-            count = wall_counts[wall_model_id]
-            wall_counts[wall_model_id] += 1
+        # Get wall info
+        wall_info = get_wall_info(data)
+        if wall_info is not None:
+            model_id, y_rotation, variant_number = wall_info
+
+            # Maintain a count for each (ModelId, YRotation)
+            key = (model_id, y_rotation)
+            if key not in wall_counts:
+                wall_counts[key] = 0
+            count = wall_counts[key]
+            wall_counts[key] += 1
 
             # Build the new filename
-            new_filename = f"wall-{wall_model_id:03d}-{count:02d}.json"
+            new_filename = f"wall-{model_id:03d}-{y_rotation:03d}-{count:02d}.json"
             new_file_path = os.path.join(output_directory, new_filename)
 
             # Move the file
             shutil.move(file_path, new_file_path)
             print(f"Moved file to: {new_file_path}")
-
 
 if __name__ == "__main__":
     process_building_files()
