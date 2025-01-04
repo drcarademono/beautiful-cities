@@ -110,7 +110,6 @@ def get_vanilla_building_data(location_name):
 
     return name_seed_list, quality_list, sector_list
 
-
 def update_buildings():
     """Update buildings in all location JSON files with vanilla data."""
     # Get all location JSON files
@@ -124,6 +123,12 @@ def update_buildings():
         if location_data is None:
             continue
 
+        # Extract the LocationId
+        location_id = location_data.get('Exterior', {}).get('RecordElement', {}).get('Header', {}).get('LocationId')
+        if location_id is None:
+            print(f"  No LocationId found in {location_file}. Skipping.")
+            continue
+
         # Extract the BlockNames array
         block_names = location_data.get('Exterior', {}).get('ExteriorData', {}).get('BlockNames', [])
         if not block_names:
@@ -134,8 +139,11 @@ def update_buildings():
         location_name = os.path.basename(location_file)
         name_seed_list, quality_list, sector_list = get_vanilla_building_data(location_name)
 
+        # Determine the maximum Sector for each BuildingType
+        max_sectors = {bt: max(sectors) if sectors else 0 for bt, sectors in sector_list.items()}
+
         new_buildings = []
-        sector_counters = {}  # Track last sector for each BuildingType
+        used_sectors = set()  # Track all used Sector values to avoid reuse
 
         # Process each block in BlockNames
         for block_name in block_names:
@@ -172,11 +180,21 @@ def update_buildings():
 
                 # Assign Sector
                 if sector_list.get(building_type):
-                    building['Sector'] = sector_list[building_type].pop(0)
+                    # Use next available Sector from vanilla
+                    sector = sector_list[building_type].pop(0)
                 else:
-                    last_sector = sector_counters.get(building_type, 0)
-                    building['Sector'] = last_sector + 3
-                    sector_counters[building_type] = building['Sector']
+                    # Start incrementing from the highest known Sector
+                    max_sector = max_sectors.get(building_type, 0)
+                    while max_sector in used_sectors:
+                        max_sector += 3
+                    sector = max_sector
+                    max_sectors[building_type] = sector  # Update the max for the next building
+
+                building['Sector'] = sector
+                used_sectors.add(sector)  # Track used Sector values
+
+                # Assign LocationId
+                building['LocationId'] = location_id
 
                 # Add to the new buildings list
                 new_buildings.append(building)
