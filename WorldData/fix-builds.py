@@ -143,9 +143,13 @@ def update_buildings():
         vanilla_data_by_type_faction = {}
         for building_type, name_seeds in name_seed_list.items():
             for i, name_seed in enumerate(name_seeds):
-                faction_id = 0  # Default FactionId for vanilla buildings
+                # Normalize FactionId: Treat 26 and 92 as the same
+                faction_id = 0
                 if sector_list.get(building_type) and i < len(sector_list[building_type]):
                     faction_id = sector_list[building_type][i]
+                    if faction_id == 92:
+                        faction_id = 26
+
                 vanilla_data_by_type_faction[(building_type, faction_id)] = {
                     "NameSeed": name_seed,
                     "Quality": quality_list[building_type][i] if quality_list.get(building_type) and i < len(quality_list[building_type]) else None,
@@ -182,8 +186,11 @@ def update_buildings():
                 building_type = normalize_building_type(building.get('BuildingType'))
                 faction_id = building.get('FactionId', 0)
 
-                # First try to match BuildingType and FactionId
-                key = (building_type, faction_id)
+                # Normalize FactionId for matching
+                normalized_faction_id = 26 if faction_id in {26, 92} else faction_id
+
+                # First try to match BuildingType and normalized FactionId
+                key = (building_type, normalized_faction_id)
                 vanilla_data = vanilla_data_by_type_faction.get(key)
 
                 # If no exact match, fallback to match BuildingType only
@@ -221,6 +228,10 @@ def update_buildings():
 
                 # Assign LocationId
                 building["LocationId"] = location_id
+
+                # Always set FactionId to 26 for 26 or 92
+                if faction_id in {26, 92}:
+                    building["FactionId"] = 26
 
                 # Add to the new buildings list
                 new_buildings.append(building)
