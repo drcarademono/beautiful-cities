@@ -139,11 +139,27 @@ def update_buildings():
         location_name = os.path.basename(location_file)
         name_seed_list, quality_list, sector_list = get_vanilla_building_data(location_name)
 
-        # Determine the maximum Sector for each BuildingType
-        max_sectors = {bt: max(sectors) if sectors else 0 for bt, sectors in sector_list.items()}
+        # Create a dictionary for matching BuildingType and FactionId
+        vanilla_data_by_type_faction = {}
+        for building_type, name_seeds in name_seed_list.items():
+            for i, name_seed in enumerate(name_seeds):
+                faction_id = 0  # Default FactionId for vanilla buildings
+                if sector_list.get(building_type) and i < len(sector_list[building_type]):
+                    faction_id = sector_list[building_type][i]
+                vanilla_data_by_type_faction[(building_type, faction_id)] = {
+                    "NameSeed": name_seed,
+                    "Quality": quality_list[building_type][i] if quality_list.get(building_type) and i < len(quality_list[building_type]) else None,
+                    "Sector": sector_list[building_type][i] if sector_list.get(building_type) and i < len(sector_list[building_type]) else None,
+                }
+
+        # Determine the global maximum Sector value
+        global_max_sector = max(
+            (max(sectors) for sectors in sector_list.values() if sectors), 
+            default=0
+        )
 
         new_buildings = []
-        used_sectors = set()  # Track all used Sector values to avoid reuse
+        used_sectors = set()  # Track used sectors to ensure uniqueness
 
         # Process each block in BlockNames
         for block_name in block_names:
@@ -164,47 +180,57 @@ def update_buildings():
             # Update building data
             for building in buildings_to_add:
                 building_type = normalize_building_type(building.get('BuildingType'))
-                building['BuildingType'] = building_type  # Ensure string type
+                faction_id = building.get('FactionId', 0)
+
+                # First try to match BuildingType and FactionId
+                key = (building_type, faction_id)
+                vanilla_data = vanilla_data_by_type_faction.get(key)
+
+                # If no exact match, fallback to match BuildingType only
+                if not vanilla_data and name_seed_list.get(building_type):
+                    vanilla_data = {
+                        "NameSeed": name_seed_list[building_type].pop(0) if name_seed_list[building_type] else None,
+                        "Quality": quality_list[building_type].pop(0) if quality_list.get(building_type) else None,
+                        "Sector": sector_list[building_type].pop(0) if sector_list.get(building_type) else None,
+                    }
 
                 # Assign NameSeed
-                if name_seed_list.get(building_type):
-                    building['NameSeed'] = name_seed_list[building_type].pop(0)
+                if vanilla_data and vanilla_data["NameSeed"] is not None:
+                    building["NameSeed"] = vanilla_data["NameSeed"]
                 else:
-                    building['NameSeed'] = random.randint(0, 30000)
+                    building["NameSeed"] = random.randint(0, 30000)
 
                 # Assign Quality
-                if quality_list.get(building_type):
-                    building['Quality'] = quality_list[building_type].pop(0)
+                if vanilla_data and vanilla_data["Quality"] is not None:
+                    building["Quality"] = vanilla_data["Quality"]
                 else:
-                    building['Quality'] = building.get('Quality')  # Fallback to RMB quality
+                    building["Quality"] = building.get("Quality")  # Fallback to RMB quality
 
                 # Assign Sector
-                if sector_list.get(building_type):
-                    # Use next available Sector from vanilla
-                    sector = sector_list[building_type].pop(0)
+                if vanilla_data and vanilla_data["Sector"] is not None:
+                    sector = vanilla_data["Sector"]
                 else:
-                    # Start incrementing from the highest known Sector
-                    max_sector = max_sectors.get(building_type, 0)
-                    while max_sector in used_sectors:
-                        max_sector += 3
-                    sector = max_sector
-                    max_sectors[building_type] = sector  # Update the max for the next building
+                    # Increment from the global maximum Sector
+                    while global_max_sector in used_sectors:
+                        global_max_sector += 3
+                    sector = global_max_sector
+                    global_max_sector = sector  # Update the global max
 
-                building['Sector'] = sector
-                used_sectors.add(sector)  # Track used Sector values
+                building["Sector"] = sector
+                used_sectors.add(sector)  # Track the used sector
 
                 # Assign LocationId
-                building['LocationId'] = location_id
+                building["LocationId"] = location_id
 
                 # Add to the new buildings list
                 new_buildings.append(building)
 
         # Update the location file's building data
-        location_data['Exterior']['Buildings'] = new_buildings
-        location_data['Exterior']['BuildingCount'] = len(new_buildings)
+        location_data["Exterior"]["Buildings"] = new_buildings
+        location_data["Exterior"]["BuildingCount"] = len(new_buildings)
 
         # Save the updated location JSON
-        with open(location_file, 'w') as f:
+        with open(location_file, "w") as f:
             json.dump(location_data, f, indent=4)
 
         print(f"  Updated {location_file} with {len(new_buildings)} buildings.")
