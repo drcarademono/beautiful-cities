@@ -4,80 +4,6 @@ import glob
 import re
 import random
 
-def load_json_file(filepath):
-    with open(filepath, 'r') as f:
-        content = f.read()
-        # Replace invalid escape sequences
-        content = re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', content)
-        try:
-            return json.loads(content)
-        except json.JSONDecodeError as e:
-            print(f"Error decoding JSON in file {filepath}: {e}")
-            return None
-
-def count_interiors(rmb_data):
-    sub_records = rmb_data.get('RmbBlock', {}).get('SubRecords', [])
-    num_interiors = sum(1 for record in sub_records if 'Interior' in record)
-    return num_interiors
-
-def get_existing_building_data(buildings):
-    name_seed_list = {}
-    quality_list = {}
-    sector_list = {}
-    for building in buildings:
-        building_type = building.get('BuildingType')
-        name_seed = building.get('NameSeed')
-        quality = building.get('Quality')
-        sector = building.get('Sector')
-        if building_type is not None:
-            if building_type not in name_seed_list:
-                name_seed_list[building_type] = []
-                quality_list[building_type] = []
-                sector_list[building_type] = []
-            if name_seed is not None:
-                name_seed_list[building_type].append(name_seed)
-            if quality is not None:
-                quality_list[building_type].append(quality)
-            if sector is not None:
-                sector_list[building_type].append(sector)
-    return name_seed_list, quality_list, sector_list
-
-def load_vanilla_building_data(location_name):
-    """Load BuildingDataList from the vanilla location JSON file."""
-    vanilla_file = os.path.join('vanillaloc', location_name)
-    if not os.path.exists(vanilla_file):
-        print(f"  Vanilla file {vanilla_file} does not exist.")
-        return None
-
-    vanilla_data = load_json_file(vanilla_file)
-    if vanilla_data is None:
-        return None
-
-    return vanilla_data.get('Exterior', {}).get('BuildingDataList', [])
-
-def get_vanilla_building_data(vanilla_buildings):
-    """Extract NameSeed, Quality, and Sector from vanilla buildings."""
-    name_seed_list = {}
-    quality_list = {}
-    sector_list = {}
-    for building in vanilla_buildings:
-        building_type = building.get('BuildingType')
-        name_seed = building.get('NameSeed')
-        quality = building.get('Quality')
-        sector = building.get('Sector')
-        if building_type is not None:
-            if building_type not in name_seed_list:
-                name_seed_list[building_type] = []
-                quality_list[building_type] = []
-                sector_list[building_type] = []
-            if name_seed is not None:
-                name_seed_list[building_type].append(name_seed)
-            if quality is not None:
-                quality_list[building_type].append(quality)
-            if sector is not None:
-                sector_list[building_type].append(sector)
-    return name_seed_list, quality_list, sector_list
-
 # Map BuildingType names to enum values
 BUILDING_TYPE_ENUM = {
     "None": -1,
@@ -115,94 +41,157 @@ BUILDING_TYPE_ENUM = {
     "AllValid": 0xffff,
 }
 
+# Map numeric BuildingType values to their string equivalents
+ENUM_TO_BUILDING_TYPE = {v: k for k, v in BUILDING_TYPE_ENUM.items()}
+
+
+def load_json_file(filepath):
+    """Safely load a JSON file with escape sequence handling."""
+    with open(filepath, 'r') as f:
+        content = f.read()
+        content = re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', content)  # Fix invalid escapes
+        try:
+            return json.loads(content)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON in file {filepath}: {e}")
+            return None
+
+
 def normalize_building_type(building_type):
-    """Convert BuildingType to its numeric equivalent if it's a string."""
-    if isinstance(building_type, str):
-        return BUILDING_TYPE_ENUM.get(building_type, -1)  # Default to -1 if not found
-    return building_type
+    """Convert BuildingType to its string equivalent."""
+    if isinstance(building_type, int):
+        return ENUM_TO_BUILDING_TYPE.get(building_type, "None")  # Default to "None"
+    return building_type  # Assume it's already a string
+
+
+def count_interiors(rmb_data):
+    """Count the number of Interior subrecords in an RMB block."""
+    sub_records = rmb_data.get('RmbBlock', {}).get('SubRecords', [])
+    return sum(1 for record in sub_records if 'Interior' in record)
+
+
+def get_vanilla_building_data(location_name):
+    """Extract NameSeed, Quality, and Sector data from the vanilla location JSON."""
+    vanilla_file = os.path.join('vanillaloc', location_name)
+    if not os.path.exists(vanilla_file):
+        print(f"  Vanilla file {vanilla_file} does not exist.")
+        return {}, {}, {}
+
+    vanilla_data = load_json_file(vanilla_file)
+    if vanilla_data is None:
+        return {}, {}, {}
+
+    # Extract building data from vanilla file
+    vanilla_buildings = vanilla_data.get('Exterior', {}).get('Buildings', [])
+    name_seed_list = {}
+    quality_list = {}
+    sector_list = {}
+
+    for building in vanilla_buildings:
+        building_type = normalize_building_type(building.get('BuildingType'))
+
+        name_seed = building.get('NameSeed')
+        quality = building.get('Quality')
+        sector = building.get('Sector')
+
+        # Initialize lists for this building type
+        if building_type not in name_seed_list:
+            name_seed_list[building_type] = []
+            quality_list[building_type] = []
+            sector_list[building_type] = []
+
+        # Append data to respective lists
+        if name_seed is not None:
+            name_seed_list[building_type].append(name_seed)
+        if quality is not None:
+            quality_list[building_type].append(quality)
+        if sector is not None:
+            sector_list[building_type].append(sector)
+
+    return name_seed_list, quality_list, sector_list
+
 
 def update_buildings():
-    # Get a list of all location*.json files in the current directory
+    """Update buildings in all location JSON files with vanilla data."""
+    # Get all location JSON files
     location_files = glob.glob('location*.json')
 
     for location_file in location_files:
         print(f"Processing {location_file}")
         
+        # Load the location data
         location_data = load_json_file(location_file)
         if location_data is None:
             continue
 
-        # Get the corresponding vanilla location JSON filename
-        location_name = os.path.basename(location_file)
-        vanilla_buildings = load_vanilla_building_data(location_name)
-        if vanilla_buildings is None:
-            print(f"  Skipping {location_file} due to missing vanilla data.")
+        # Extract the BlockNames array
+        block_names = location_data.get('Exterior', {}).get('ExteriorData', {}).get('BlockNames', [])
+        if not block_names:
+            print(f"  No BlockNames found in {location_file}.")
             continue
 
-        # Extract building data from the vanilla file
-        name_seed_list, quality_list, sector_list = get_vanilla_building_data(vanilla_buildings)
+        # Load the vanilla location data
+        location_name = os.path.basename(location_file)
+        name_seed_list, quality_list, sector_list = get_vanilla_building_data(location_name)
 
         new_buildings = []
+        sector_counters = {}  # Track last sector for each BuildingType
 
-        # Get the LocationId
-        location_id = location_data.get('Exterior', {}).get('RecordElement', {}).get('Header', {}).get('LocationId', 0)
-        print(f"  LocationId: {location_id}")
-
-        # Get the BlockNames array from Exterior > ExteriorData
-        block_names = location_data.get('Exterior', {}).get('ExteriorData', {}).get('BlockNames', [])
+        # Process each block in BlockNames
         for block_name in block_names:
             rmb_file = block_name + '.json'
-            print(f"  Working on BlockName: {block_name}")
+            print(f"  Processing block: {block_name}")
 
-            if not os.path.exists(rmb_file):
-                print(f"    File {rmb_file} does not exist.")
-                continue
-
+            # Load the RMB data
             rmb_data = load_json_file(rmb_file)
             if rmb_data is None:
+                print(f"    Missing or invalid RMB file: {rmb_file}")
                 continue
 
-            # Count the number of Interior subrecords
-            num_interiors = count_interiors(rmb_data)
-            print(f"    Found {num_interiors} interior(s) in {rmb_file}")
-
-            # Get the BuildingDataList
+            # Extract building data
             building_data_list = rmb_data.get('RmbBlock', {}).get('FldHeader', {}).get('BuildingDataList', [])
-
-            # Take the first x items from the BuildingDataList
+            num_interiors = count_interiors(rmb_data)
             buildings_to_add = building_data_list[:num_interiors]
 
-            # Update the fields for each building using vanilla data
+            # Update building data
             for building in buildings_to_add:
                 building_type = normalize_building_type(building.get('BuildingType'))
-                if building_type in name_seed_list and name_seed_list[building_type]:
+                building['BuildingType'] = building_type  # Ensure string type
+
+                # Assign NameSeed
+                if name_seed_list.get(building_type):
                     building['NameSeed'] = name_seed_list[building_type].pop(0)
                 else:
                     building['NameSeed'] = random.randint(0, 30000)
 
-                if building_type in quality_list and quality_list[building_type]:
+                # Assign Quality
+                if quality_list.get(building_type):
                     building['Quality'] = quality_list[building_type].pop(0)
+                else:
+                    building['Quality'] = building.get('Quality')  # Fallback to RMB quality
 
-                if building_type in sector_list and sector_list[building_type]:
+                # Assign Sector
+                if sector_list.get(building_type):
                     building['Sector'] = sector_list[building_type].pop(0)
                 else:
-                    building['Sector'] = new_buildings[-1]['Sector'] + 3 if new_buildings else 3
+                    last_sector = sector_counters.get(building_type, 0)
+                    building['Sector'] = last_sector + 3
+                    sector_counters[building_type] = building['Sector']
 
-                building['LocationId'] = location_id
+                # Add to the new buildings list
+                new_buildings.append(building)
 
-            new_buildings.extend(buildings_to_add)
-            print(f"    Adding {len(buildings_to_add)} building(s) from {block_name} to Buildings array")
+        # Update the location file's building data
+        location_data['Exterior']['Buildings'] = new_buildings
+        location_data['Exterior']['BuildingCount'] = len(new_buildings)
 
-        # Update the Buildings array and BuildingCount in the location*.json file
-        if 'Exterior' in location_data:
-            location_data['Exterior']['Buildings'] = new_buildings
-            location_data['Exterior']['BuildingCount'] = len(new_buildings)
-        else:
-            print(f"    No existing Buildings array found in {location_file}. Skipping update.")
-
-        # Write the updated data back to the file
+        # Save the updated location JSON
         with open(location_file, 'w') as f:
             json.dump(location_data, f, indent=4)
 
-        print(f"Updated {location_file} with {len(new_buildings)} buildings.")
+        print(f"  Updated {location_file} with {len(new_buildings)} buildings.")
+
+if __name__ == '__main__':
+    update_buildings()
+
 
