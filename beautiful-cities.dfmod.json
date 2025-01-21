@@ -1020,14 +1020,24 @@
         "Assets/Game/Mods/beautiful-cities/WorldData/CUSTAA43.RMB.json",
         "Assets/Game/Mods/beautiful-cities/WorldData/location-17-1231.json",
         "Assets/Game/Mods/beautiful-cities/WorldData/location-20-6.json",
-        "Assets/Game/Mods/beautiful-cities/WorldData/location-23-601.json"
+        "Assets/Game/Mods/beautiful-cities/WorldData/location-23-601.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAC0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAA0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAF0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAE0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAB0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAD0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPGBB0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAH0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPGAB0.RMB.json",
+        "Assets/Game/Mods/beautiful-cities/WorldData/TEMPBAG0.RMB.json"
     ],
     "Dependencies": [
         {
             "Name": "rmb resource pack",
             "IsOptional": false,
             "IsPeer": true,
-            "Version": "0.1.10"
+            "Version": "0.2.1"
         },
         {
             "Name": "fixed desert architecture",
@@ -1048,6 +1058,12 @@
             "Name": "det harvestable crops",
             "IsOptional": false,
             "IsPeer": true
+        },
+        {
+            "Name": "daggerfall expanded textures",
+            "IsOptional": false,
+            "IsPeer": true,
+            "Version": "0.6.5"
         }
     ]
 }
