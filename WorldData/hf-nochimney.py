@@ -7,7 +7,7 @@ import re
 remove_only_keywords = {
     "BL", "BM", "BS", "GL", "GM", "GS", "FARMBA", "CAST", "PALA", 
     "CUSTGA", "DUNG", "GRVE", "MARKAB", "RUIN", "SHCKBA", "SHIP", 
-    "TEMPB", "TEMPG", "WITC"
+    "TEMPB", "TEMPG", "WITC", "MAGEBA", "MAGEGA"
 }
 
 def remove_entries(json_data):
