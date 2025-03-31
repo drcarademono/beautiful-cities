@@ -1484,12 +1484,12 @@
                 "LocationId": 23458
             },
             {
-                "FactionId": 0,
-                "BuildingType": 15,
-                "Quality": 13,
                 "NameSeed": 7953,
+                "FactionId": 0,
                 "Sector": 1194,
-                "LocationId": 23458
+                "LocationId": 23458,
+                "BuildingType": "Tavern",
+                "Quality": 13
             },
             {
                 "NameSeed": 32699,
@@ -1508,12 +1508,12 @@
                 "Quality": 9
             },
             {
-                "FactionId": 0,
-                "BuildingType": 19,
-                "Quality": 19,
                 "NameSeed": 32705,
+                "FactionId": 0,
                 "Sector": 632,
-                "LocationId": 23458
+                "LocationId": 23458,
+                "BuildingType": "House3",
+                "Quality": 19
             },
             {
                 "NameSeed": 31397,
@@ -1612,14 +1612,6 @@
                 "Quality": 7
             },
             {
-                "NameSeed": 9847,
-                "FactionId": 0,
-                "Sector": 557,
-                "LocationId": 23458,
-                "BuildingType": "GemStore",
-                "Quality": 10
-            },
-            {
                 "NameSeed": 15371,
                 "FactionId": 0,
                 "Sector": 1173,
@@ -1628,12 +1620,20 @@
                 "Quality": 13
             },
             {
+                "NameSeed": 9847,
                 "FactionId": 510,
-                "BuildingType": 8,
-                "Quality": 11,
-                "NameSeed": 13807,
-                "Sector": 872,
-                "LocationId": 23458
+                "Sector": 557,
+                "LocationId": 23458,
+                "BuildingType": "GemStore",
+                "Quality": 10
+            },
+            {
+                "NameSeed": 19957,
+                "FactionId": 0,
+                "Sector": 1447,
+                "LocationId": 23458,
+                "BuildingType": "PawnShop",
+                "Quality": 20
             },
             {
                 "NameSeed": 10492,
@@ -1918,9 +1918,9 @@
             {
                 "FactionId": 510,
                 "BuildingType": 12,
-                "Quality": 20,
-                "NameSeed": 19957,
-                "Sector": 1447,
+                "Quality": 10,
+                "NameSeed": 32825,
+                "Sector": 1786,
                 "LocationId": 23458
             },
             {
@@ -1956,9 +1956,9 @@
                 "LocationId": 23458
             },
             {
-                "NameSeed": 32825,
+                "NameSeed": 32828,
                 "FactionId": 0,
-                "Sector": 1786,
+                "Sector": 1789,
                 "LocationId": 23458,
                 "BuildingType": "House1",
                 "Quality": 16
@@ -1994,14 +1994,6 @@
                 "NameSeed": 30401,
                 "Sector": 994,
                 "LocationId": 23458
-            },
-            {
-                "NameSeed": 32828,
-                "FactionId": 0,
-                "Sector": 1789,
-                "LocationId": 23458,
-                "BuildingType": "House5",
-                "Quality": 0
             },
             {
                 "NameSeed": 32831,
@@ -2048,6 +2040,14 @@
                 "FactionId": 0,
                 "Sector": 1807,
                 "LocationId": 23458,
+                "BuildingType": "House5",
+                "Quality": 0
+            },
+            {
+                "NameSeed": 32849,
+                "FactionId": 0,
+                "Sector": 1810,
+                "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 8
             },
@@ -2058,14 +2058,6 @@
                 "LocationId": 23458,
                 "BuildingType": "Armorer",
                 "Quality": 8
-            },
-            {
-                "NameSeed": 32849,
-                "FactionId": 0,
-                "Sector": 1810,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 4
             },
             {
                 "NameSeed": 32852,
@@ -2089,7 +2081,7 @@
                 "Sector": 1819,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 8
+                "Quality": 4
             },
             {
                 "NameSeed": 32861,
@@ -2097,7 +2089,7 @@
                 "Sector": 1822,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 8
             },
             {
                 "NameSeed": 32864,
@@ -2105,7 +2097,7 @@
                 "Sector": 1825,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 6
             },
             {
                 "NameSeed": 32867,
@@ -2113,7 +2105,7 @@
                 "Sector": 1828,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 4
             },
             {
                 "NameSeed": 32870,
@@ -2121,7 +2113,7 @@
                 "Sector": 1831,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 7
+                "Quality": 6
             },
             {
                 "NameSeed": 32873,
@@ -2137,7 +2129,7 @@
                 "Sector": 1837,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 7
             },
             {
                 "NameSeed": 32879,
@@ -2145,7 +2137,7 @@
                 "Sector": 1840,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 8
+                "Quality": 6
             },
             {
                 "NameSeed": 32882,
@@ -2153,7 +2145,7 @@
                 "Sector": 1843,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 8
             },
             {
                 "NameSeed": 32885,
@@ -2161,7 +2153,7 @@
                 "Sector": 1846,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 4
             },
             {
                 "NameSeed": 32888,
@@ -2177,28 +2169,36 @@
                 "Sector": 1852,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 7
+                "Quality": 6
             },
             {
                 "NameSeed": 32894,
                 "FactionId": 0,
                 "Sector": 1855,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 7
             },
             {
                 "NameSeed": 32897,
                 "FactionId": 0,
                 "Sector": 1858,
                 "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 8
+                "BuildingType": "House3",
+                "Quality": 6
             },
             {
                 "NameSeed": 32900,
                 "FactionId": 0,
                 "Sector": 1861,
+                "LocationId": 23458,
+                "BuildingType": "House2",
+                "Quality": 8
+            },
+            {
+                "NameSeed": 32903,
+                "FactionId": 0,
+                "Sector": 1864,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 5
@@ -2207,17 +2207,9 @@
                 "FactionId": 0,
                 "BuildingType": 15,
                 "Quality": 10,
-                "NameSeed": 32903,
-                "Sector": 1864,
-                "LocationId": 23458
-            },
-            {
                 "NameSeed": 32906,
-                "FactionId": 0,
                 "Sector": 1867,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 12
+                "LocationId": 23458
             },
             {
                 "NameSeed": 32909,
@@ -2225,7 +2217,7 @@
                 "Sector": 1870,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 12
             },
             {
                 "NameSeed": 32912,
@@ -2233,7 +2225,7 @@
                 "Sector": 1873,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 8
+                "Quality": 4
             },
             {
                 "NameSeed": 32915,
@@ -2241,7 +2233,7 @@
                 "Sector": 1876,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 8
             },
             {
                 "NameSeed": 32918,
@@ -2257,7 +2249,7 @@
                 "Sector": 1882,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 12
+                "Quality": 4
             },
             {
                 "NameSeed": 32924,
@@ -2265,28 +2257,36 @@
                 "Sector": 1885,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 5
+                "Quality": 12
             },
             {
                 "NameSeed": 32927,
                 "FactionId": 0,
                 "Sector": 1888,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 5
             },
             {
                 "NameSeed": 32930,
                 "FactionId": 0,
                 "Sector": 1891,
                 "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 8
+                "BuildingType": "House3",
+                "Quality": 6
             },
             {
                 "NameSeed": 32933,
                 "FactionId": 0,
                 "Sector": 1894,
+                "LocationId": 23458,
+                "BuildingType": "House2",
+                "Quality": 8
+            },
+            {
+                "NameSeed": 32936,
+                "FactionId": 0,
+                "Sector": 1897,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 5
@@ -2300,20 +2300,12 @@
                 "Quality": 7
             },
             {
-                "NameSeed": 32936,
-                "FactionId": 0,
-                "Sector": 1897,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 8
-            },
-            {
                 "NameSeed": 32939,
                 "FactionId": 0,
                 "Sector": 1900,
                 "LocationId": 23458,
-                "BuildingType": "House5",
-                "Quality": 0
+                "BuildingType": "House2",
+                "Quality": 8
             },
             {
                 "NameSeed": 32942,
@@ -2337,7 +2329,7 @@
                 "Sector": 1909,
                 "LocationId": 23458,
                 "BuildingType": "House5",
-                "Quality": 5
+                "Quality": 0
             },
             {
                 "NameSeed": 32951,
@@ -2353,7 +2345,7 @@
                 "Sector": 1915,
                 "LocationId": 23458,
                 "BuildingType": "House5",
-                "Quality": 0
+                "Quality": 5
             },
             {
                 "NameSeed": 32957,
@@ -2368,6 +2360,14 @@
                 "FactionId": 0,
                 "Sector": 1921,
                 "LocationId": 23458,
+                "BuildingType": "House5",
+                "Quality": 0
+            },
+            {
+                "NameSeed": 32963,
+                "FactionId": 0,
+                "Sector": 1924,
+                "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 4
             },
@@ -2380,36 +2380,28 @@
                 "Quality": 17
             },
             {
-                "NameSeed": 32963,
-                "FactionId": 0,
-                "Sector": 1924,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 5
-            },
-            {
                 "NameSeed": 32966,
                 "FactionId": 0,
                 "Sector": 1927,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 5
             },
             {
                 "NameSeed": 32969,
                 "FactionId": 0,
                 "Sector": 1930,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 4
             },
             {
                 "NameSeed": 32972,
                 "FactionId": 0,
                 "Sector": 1933,
                 "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 4
+                "BuildingType": "House3",
+                "Quality": 6
             },
             {
                 "NameSeed": 32975,
@@ -2417,7 +2409,7 @@
                 "Sector": 1936,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 5
+                "Quality": 4
             },
             {
                 "NameSeed": 32978,
@@ -2425,7 +2417,7 @@
                 "Sector": 1939,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 5
             },
             {
                 "NameSeed": 32981,
@@ -2433,7 +2425,7 @@
                 "Sector": 1942,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 12
+                "Quality": 4
             },
             {
                 "NameSeed": 32984,
@@ -2441,7 +2433,7 @@
                 "Sector": 1945,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 9
+                "Quality": 12
             },
             {
                 "NameSeed": 32987,
@@ -2449,7 +2441,7 @@
                 "Sector": 1948,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 9
             },
             {
                 "NameSeed": 32990,
@@ -2457,7 +2449,7 @@
                 "Sector": 1951,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 5
+                "Quality": 6
             },
             {
                 "NameSeed": 32993,
@@ -2465,7 +2457,7 @@
                 "Sector": 1954,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 5
             },
             {
                 "NameSeed": 32996,
@@ -2473,7 +2465,7 @@
                 "Sector": 1957,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 12
+                "Quality": 4
             },
             {
                 "NameSeed": 32999,
@@ -2481,7 +2473,7 @@
                 "Sector": 1960,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 9
+                "Quality": 12
             },
             {
                 "NameSeed": 33002,
@@ -2489,12 +2481,20 @@
                 "Sector": 1963,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 9
             },
             {
                 "NameSeed": 33005,
                 "FactionId": 0,
                 "Sector": 1966,
+                "LocationId": 23458,
+                "BuildingType": "House2",
+                "Quality": 6
+            },
+            {
+                "NameSeed": 33008,
+                "FactionId": 0,
+                "Sector": 1969,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 6
@@ -2508,25 +2508,25 @@
                 "Quality": 13
             },
             {
-                "NameSeed": 33008,
+                "NameSeed": 33011,
                 "FactionId": 0,
-                "Sector": 1969,
+                "Sector": 1972,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 5
             },
             {
-                "NameSeed": 33011,
+                "NameSeed": 33014,
                 "FactionId": 0,
-                "Sector": 1972,
+                "Sector": 1975,
                 "LocationId": 23458,
                 "BuildingType": "House3",
                 "Quality": 6
             },
             {
-                "NameSeed": 33014,
+                "NameSeed": 33017,
                 "FactionId": 0,
-                "Sector": 1975,
+                "Sector": 1978,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 4
@@ -2572,9 +2572,9 @@
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33017,
+                "NameSeed": 33020,
                 "FactionId": 0,
-                "Sector": 1978,
+                "Sector": 1981,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 12
@@ -2631,17 +2631,9 @@
                 "FactionId": 0,
                 "BuildingType": 15,
                 "Quality": 8,
-                "NameSeed": 33020,
-                "Sector": 1981,
-                "LocationId": 23458
-            },
-            {
                 "NameSeed": 33023,
-                "FactionId": 0,
                 "Sector": 1984,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 6
+                "LocationId": 23458
             },
             {
                 "NameSeed": 33026,
@@ -2649,22 +2641,22 @@
                 "Sector": 1987,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 9
+                "Quality": 6
             },
             {
                 "NameSeed": 33029,
                 "FactionId": 0,
                 "Sector": 1990,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 9
             },
             {
                 "NameSeed": 33032,
                 "FactionId": 0,
                 "Sector": 1993,
                 "LocationId": 23458,
-                "BuildingType": "House2",
+                "BuildingType": "House3",
                 "Quality": 6
             },
             {
@@ -2673,7 +2665,7 @@
                 "Sector": 1996,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 12
+                "Quality": 6
             },
             {
                 "NameSeed": 33038,
@@ -2681,7 +2673,7 @@
                 "Sector": 1999,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 12
             },
             {
                 "NameSeed": 33041,
@@ -2689,15 +2681,15 @@
                 "Sector": 2002,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 5
+                "Quality": 6
             },
             {
                 "NameSeed": 33044,
                 "FactionId": 0,
                 "Sector": 2005,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 5
             },
             {
                 "NameSeed": 33047,
@@ -2712,8 +2704,8 @@
                 "FactionId": 0,
                 "Sector": 2011,
                 "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 4
+                "BuildingType": "House3",
+                "Quality": 6
             },
             {
                 "NameSeed": 33053,
@@ -2721,7 +2713,7 @@
                 "Sector": 2014,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 12
+                "Quality": 4
             },
             {
                 "NameSeed": 33056,
@@ -2729,36 +2721,44 @@
                 "Sector": 2017,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 5
+                "Quality": 12
             },
             {
                 "NameSeed": 33059,
                 "FactionId": 0,
                 "Sector": 2020,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 5
             },
             {
                 "NameSeed": 33062,
                 "FactionId": 0,
                 "Sector": 2023,
                 "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 10
+                "BuildingType": "House3",
+                "Quality": 6
             },
             {
                 "NameSeed": 33065,
                 "FactionId": 0,
                 "Sector": 2026,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 10
             },
             {
                 "NameSeed": 33068,
                 "FactionId": 0,
                 "Sector": 2029,
+                "LocationId": 23458,
+                "BuildingType": "House3",
+                "Quality": 6
+            },
+            {
+                "NameSeed": 33071,
+                "FactionId": 0,
+                "Sector": 2032,
                 "LocationId": 23458,
                 "BuildingType": "House3",
                 "Quality": 6
@@ -2770,14 +2770,6 @@
                 "LocationId": 23458,
                 "BuildingType": "GuildHall",
                 "Quality": 15
-            },
-            {
-                "NameSeed": 33071,
-                "FactionId": 0,
-                "Sector": 2032,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 7
             },
             {
                 "NameSeed": 33074,
@@ -2801,7 +2793,7 @@
                 "Sector": 2041,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 7
             },
             {
                 "NameSeed": 33083,
@@ -2809,7 +2801,7 @@
                 "Sector": 2044,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 10
+                "Quality": 6
             },
             {
                 "NameSeed": 33086,
@@ -2817,7 +2809,7 @@
                 "Sector": 2047,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 10
             },
             {
                 "NameSeed": 33089,
@@ -2825,7 +2817,7 @@
                 "Sector": 2050,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 8
+                "Quality": 4
             },
             {
                 "NameSeed": 33092,
@@ -2833,7 +2825,7 @@
                 "Sector": 2053,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 8
             },
             {
                 "NameSeed": 33095,
@@ -2841,7 +2833,7 @@
                 "Sector": 2056,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 2
+                "Quality": 6
             },
             {
                 "NameSeed": 33098,
@@ -2849,7 +2841,7 @@
                 "Sector": 2059,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 2
             },
             {
                 "NameSeed": 33101,
@@ -2857,7 +2849,7 @@
                 "Sector": 2062,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 4
             },
             {
                 "NameSeed": 33104,
@@ -2873,7 +2865,7 @@
                 "Sector": 2068,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 12
+                "Quality": 6
             },
             {
                 "NameSeed": 33110,
@@ -2881,7 +2873,7 @@
                 "Sector": 2071,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 12
             },
             {
                 "NameSeed": 33113,
@@ -2897,7 +2889,7 @@
                 "Sector": 2077,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 7
+                "Quality": 4
             },
             {
                 "NameSeed": 33119,
@@ -2905,7 +2897,7 @@
                 "Sector": 2080,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 7
             },
             {
                 "NameSeed": 33122,
@@ -2913,23 +2905,23 @@
                 "Sector": 2083,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 7
+                "Quality": 6
             },
             {
-                "FactionId": 0,
-                "BuildingType": 15,
-                "Quality": 9,
                 "NameSeed": 33125,
+                "FactionId": 0,
                 "Sector": 2086,
-                "LocationId": 23458
+                "LocationId": 23458,
+                "BuildingType": "House2",
+                "Quality": 7
             },
             {
                 "NameSeed": 33128,
                 "FactionId": 0,
                 "Sector": 2089,
                 "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 6
+                "BuildingType": "Tavern",
+                "Quality": 9
             },
             {
                 "NameSeed": 33131,
@@ -2937,15 +2929,23 @@
                 "Sector": 2092,
                 "LocationId": 23458,
                 "BuildingType": "House2",
+                "Quality": 6
+            },
+            {
+                "NameSeed": 33134,
+                "FactionId": 0,
+                "Sector": 2095,
+                "LocationId": 23458,
+                "BuildingType": "House2",
                 "Quality": 9
             },
             {
+                "NameSeed": 33137,
                 "FactionId": 0,
-                "BuildingType": 19,
-                "Quality": 4,
-                "NameSeed": 33134,
-                "Sector": 2095,
-                "LocationId": 23458
+                "Sector": 2098,
+                "LocationId": 23458,
+                "BuildingType": "House3",
+                "Quality": 4
             },
             {
                 "NameSeed": 20822,
@@ -2956,20 +2956,12 @@
                 "Quality": 5
             },
             {
-                "NameSeed": 33137,
-                "FactionId": 0,
-                "Sector": 2098,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 8
-            },
-            {
                 "NameSeed": 33140,
                 "FactionId": 0,
                 "Sector": 2101,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 6
+                "Quality": 8
             },
             {
                 "NameSeed": 33143,
@@ -2977,7 +2969,7 @@
                 "Sector": 2104,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 9
+                "Quality": 6
             },
             {
                 "NameSeed": 33146,
@@ -2985,7 +2977,7 @@
                 "Sector": 2107,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 5
+                "Quality": 9
             },
             {
                 "NameSeed": 33149,
@@ -3001,7 +2993,7 @@
                 "Sector": 2113,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 9
+                "Quality": 5
             },
             {
                 "NameSeed": 33155,
@@ -3009,7 +3001,7 @@
                 "Sector": 2116,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 8
+                "Quality": 9
             },
             {
                 "NameSeed": 33158,
@@ -3017,7 +3009,7 @@
                 "Sector": 2119,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 5
+                "Quality": 8
             },
             {
                 "NameSeed": 33161,
@@ -3032,8 +3024,8 @@
                 "FactionId": 0,
                 "Sector": 2125,
                 "LocationId": 23458,
-                "BuildingType": "House3",
-                "Quality": 6
+                "BuildingType": "House2",
+                "Quality": 5
             },
             {
                 "NameSeed": 33167,
@@ -3044,14 +3036,6 @@
                 "Quality": 6
             },
             {
-                "NameSeed": 19615,
-                "FactionId": 0,
-                "Sector": 997,
-                "LocationId": 23458,
-                "BuildingType": "GemStore",
-                "Quality": 15
-            },
-            {
                 "NameSeed": 33170,
                 "FactionId": 0,
                 "Sector": 2131,
@@ -3060,28 +3044,28 @@
                 "Quality": 6
             },
             {
-                "FactionId": 510,
-                "BuildingType": 8,
-                "Quality": 13,
-                "NameSeed": 4379,
-                "Sector": 1033,
-                "LocationId": 23458
+                "NameSeed": 33173,
+                "FactionId": 0,
+                "Sector": 2134,
+                "LocationId": 23458,
+                "BuildingType": "House3",
+                "Quality": 6
             },
             {
-                "FactionId": 0,
-                "BuildingType": 18,
-                "Quality": 10,
-                "NameSeed": 33173,
-                "Sector": 2134,
-                "LocationId": 23458
+                "NameSeed": 13807,
+                "FactionId": 510,
+                "Sector": 872,
+                "LocationId": 23458,
+                "BuildingType": "GemStore",
+                "Quality": 11
             },
             {
                 "NameSeed": 33176,
                 "FactionId": 0,
                 "Sector": 2137,
                 "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 8
+                "BuildingType": "PawnShop",
+                "Quality": 7
             },
             {
                 "FactionId": 0,
@@ -3097,12 +3081,28 @@
                 "Sector": 2143,
                 "LocationId": 23458,
                 "BuildingType": "House2",
+                "Quality": 8
+            },
+            {
+                "FactionId": 0,
+                "BuildingType": 18,
+                "Quality": 10,
+                "NameSeed": 33185,
+                "Sector": 2146,
+                "LocationId": 23458
+            },
+            {
+                "NameSeed": 33188,
+                "FactionId": 0,
+                "Sector": 2149,
+                "LocationId": 23458,
+                "BuildingType": "House2",
                 "Quality": 4
             },
             {
-                "NameSeed": 33185,
+                "NameSeed": 33191,
                 "FactionId": 0,
-                "Sector": 2146,
+                "Sector": 2152,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 4
@@ -3111,25 +3111,9 @@
                 "FactionId": 0,
                 "BuildingType": 18,
                 "Quality": 10,
-                "NameSeed": 33188,
-                "Sector": 2149,
-                "LocationId": 23458
-            },
-            {
-                "NameSeed": 33191,
-                "FactionId": 0,
-                "Sector": 2152,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 6
-            },
-            {
                 "NameSeed": 33194,
-                "FactionId": 0,
                 "Sector": 2155,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 6
+                "LocationId": 23458
             },
             {
                 "NameSeed": 33197,
@@ -3140,12 +3124,12 @@
                 "Quality": 6
             },
             {
-                "FactionId": 0,
-                "BuildingType": 18,
-                "Quality": 10,
                 "NameSeed": 33200,
+                "FactionId": 0,
                 "Sector": 2161,
-                "LocationId": 23458
+                "LocationId": 23458,
+                "BuildingType": "House2",
+                "Quality": 6
             },
             {
                 "NameSeed": 33203,
@@ -3153,12 +3137,28 @@
                 "Sector": 2164,
                 "LocationId": 23458,
                 "BuildingType": "House2",
+                "Quality": 6
+            },
+            {
+                "FactionId": 0,
+                "BuildingType": 18,
+                "Quality": 10,
+                "NameSeed": 33206,
+                "Sector": 2167,
+                "LocationId": 23458
+            },
+            {
+                "NameSeed": 33209,
+                "FactionId": 0,
+                "Sector": 2170,
+                "LocationId": 23458,
+                "BuildingType": "House2",
                 "Quality": 4
             },
             {
-                "NameSeed": 33206,
+                "NameSeed": 33212,
                 "FactionId": 0,
-                "Sector": 2167,
+                "Sector": 2173,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 4
@@ -3167,22 +3167,22 @@
                 "FactionId": 0,
                 "BuildingType": 18,
                 "Quality": 10,
-                "NameSeed": 33209,
-                "Sector": 2170,
+                "NameSeed": 33215,
+                "Sector": 2176,
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33212,
+                "NameSeed": 33218,
                 "FactionId": 0,
-                "Sector": 2173,
+                "Sector": 2179,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 8
             },
             {
-                "NameSeed": 33215,
+                "NameSeed": 33221,
                 "FactionId": 0,
-                "Sector": 2176,
+                "Sector": 2182,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 6
@@ -3220,9 +3220,9 @@
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33218,
+                "NameSeed": 33224,
                 "FactionId": 0,
-                "Sector": 2179,
+                "Sector": 2185,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 10
@@ -3236,9 +3236,9 @@
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33221,
+                "NameSeed": 33227,
                 "FactionId": 0,
-                "Sector": 2182,
+                "Sector": 2188,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 12
@@ -3276,28 +3276,12 @@
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33224,
-                "FactionId": 0,
-                "Sector": 2185,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 5
-            },
-            {
-                "NameSeed": 33227,
-                "FactionId": 0,
-                "Sector": 2188,
-                "LocationId": 23458,
-                "BuildingType": "House2",
-                "Quality": 5
-            },
-            {
                 "NameSeed": 33230,
                 "FactionId": 0,
                 "Sector": 2191,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 7
+                "Quality": 5
             },
             {
                 "NameSeed": 33233,
@@ -3313,7 +3297,7 @@
                 "Sector": 2197,
                 "LocationId": 23458,
                 "BuildingType": "House2",
-                "Quality": 4
+                "Quality": 7
             },
             {
                 "NameSeed": 33239,
@@ -3329,30 +3313,46 @@
                 "Sector": 2203,
                 "LocationId": 23458,
                 "BuildingType": "House2",
+                "Quality": 4
+            },
+            {
+                "NameSeed": 33245,
+                "FactionId": 0,
+                "Sector": 2206,
+                "LocationId": 23458,
+                "BuildingType": "House2",
+                "Quality": 5
+            },
+            {
+                "NameSeed": 33248,
+                "FactionId": 0,
+                "Sector": 2209,
+                "LocationId": 23458,
+                "BuildingType": "House2",
                 "Quality": 6
             },
             {
                 "FactionId": 0,
                 "BuildingType": 15,
                 "Quality": 7,
-                "NameSeed": 33245,
-                "Sector": 2206,
+                "NameSeed": 33251,
+                "Sector": 2212,
                 "LocationId": 23458
             },
             {
                 "FactionId": 0,
                 "BuildingType": 15,
                 "Quality": 3,
-                "NameSeed": 33248,
-                "Sector": 2209,
+                "NameSeed": 33254,
+                "Sector": 2215,
                 "LocationId": 23458
             },
             {
                 "FactionId": 0,
                 "BuildingType": 15,
                 "Quality": 15,
-                "NameSeed": 33251,
-                "Sector": 2212,
+                "NameSeed": 33257,
+                "Sector": 2218,
                 "LocationId": 23458
             },
             {
@@ -3415,14 +3415,14 @@
                 "FactionId": 0,
                 "BuildingType": 23,
                 "Quality": 12,
-                "NameSeed": 33254,
+                "NameSeed": 33260,
                 "Sector": 1618,
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33257,
+                "NameSeed": 33263,
                 "FactionId": 0,
-                "Sector": 2215,
+                "Sector": 2221,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 18
@@ -3460,9 +3460,9 @@
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33260,
+                "NameSeed": 33266,
                 "FactionId": 0,
-                "Sector": 2218,
+                "Sector": 2224,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 12
@@ -3472,13 +3472,13 @@
                 "BuildingType": 23,
                 "Quality": 15,
                 "NameSeed": 222,
-                "Sector": 2221,
+                "Sector": 2227,
                 "LocationId": 23458
             },
             {
-                "NameSeed": 33263,
+                "NameSeed": 33269,
                 "FactionId": 0,
-                "Sector": 2224,
+                "Sector": 2230,
                 "LocationId": 23458,
                 "BuildingType": "House2",
                 "Quality": 6

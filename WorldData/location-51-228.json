@@ -2684,12 +2684,12 @@
                 "Quality": 5
             },
             {
-                "FactionId": 0,
-                "BuildingType": 15,
-                "Quality": 9,
                 "NameSeed": 14011,
+                "FactionId": 0,
                 "Sector": 1469,
-                "LocationId": 24373
+                "LocationId": 24373,
+                "BuildingType": "Tavern",
+                "Quality": 9
             },
             {
                 "NameSeed": 32986,
@@ -2708,12 +2708,12 @@
                 "Quality": 9
             },
             {
-                "FactionId": 0,
-                "BuildingType": 19,
-                "Quality": 4,
                 "NameSeed": 32992,
+                "FactionId": 0,
                 "Sector": 2235,
-                "LocationId": 24373
+                "LocationId": 24373,
+                "BuildingType": "House3",
+                "Quality": 4
             },
             {
                 "NameSeed": 30469,
@@ -2812,14 +2812,6 @@
                 "Quality": 6
             },
             {
-                "NameSeed": 24733,
-                "FactionId": 0,
-                "Sector": 453,
-                "LocationId": 24373,
-                "BuildingType": "GemStore",
-                "Quality": 5
-            },
-            {
                 "NameSeed": 33028,
                 "FactionId": 0,
                 "Sector": 2271,
@@ -2828,12 +2820,20 @@
                 "Quality": 6
             },
             {
+                "NameSeed": 24733,
                 "FactionId": 510,
-                "BuildingType": 8,
-                "Quality": 12,
-                "NameSeed": 26270,
-                "Sector": 461,
-                "LocationId": 24373
+                "Sector": 453,
+                "LocationId": 24373,
+                "BuildingType": "GemStore",
+                "Quality": 5
+            },
+            {
+                "NameSeed": 19353,
+                "FactionId": 0,
+                "Sector": 864,
+                "LocationId": 24373,
+                "BuildingType": "PawnShop",
+                "Quality": 18
             },
             {
                 "FactionId": 0,

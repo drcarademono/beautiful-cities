@@ -228,12 +228,12 @@
                 "Quality": 8
             },
             {
-                "FactionId": 0,
-                "BuildingType": 18,
-                "Quality": 7,
                 "NameSeed": 1299,
+                "FactionId": 0,
                 "Sector": 144,
-                "LocationId": 25143
+                "LocationId": 25143,
+                "BuildingType": "House2",
+                "Quality": 7
             },
             {
                 "NameSeed": 20067,
@@ -548,14 +548,6 @@
                 "Quality": 11
             },
             {
-                "NameSeed": 1954,
-                "FactionId": 0,
-                "Sector": 964,
-                "LocationId": 25143,
-                "BuildingType": "PawnShop",
-                "Quality": 11
-            },
-            {
                 "NameSeed": 3192,
                 "FactionId": 0,
                 "Sector": 811,
@@ -594,14 +586,6 @@
                 "LocationId": 25143,
                 "BuildingType": "House4",
                 "Quality": 13
-            },
-            {
-                "FactionId": 0,
-                "BuildingType": 19,
-                "Quality": 18,
-                "NameSeed": 30319,
-                "Sector": 986,
-                "LocationId": 25143
             },
             {
                 "NameSeed": 32638,
@@ -644,6 +628,14 @@
                 "Quality": 14
             },
             {
+                "NameSeed": 30319,
+                "FactionId": 0,
+                "Sector": 986,
+                "LocationId": 25143,
+                "BuildingType": "House3",
+                "Quality": 18
+            },
+            {
                 "NameSeed": 18195,
                 "FactionId": 0,
                 "Sector": 1172,
@@ -682,6 +674,14 @@
                 "LocationId": 25143,
                 "BuildingType": "House4",
                 "Quality": 12
+            },
+            {
+                "NameSeed": 1954,
+                "FactionId": 0,
+                "Sector": 964,
+                "LocationId": 25143,
+                "BuildingType": "PawnShop",
+                "Quality": 11
             },
             {
                 "FactionId": 0,
