@@ -4,12 +4,12 @@ import glob
 import random
 
 # Allowed candidate numbers:
-# For MARKAA00 (even) we allow even numbers 0, 2, 4, …, 254.
+# For even (MARKAA00) we allow even numbers 0, 2, 4, …, 254.
 allowed_even = list(range(0, 255, 2))
-# For MARKAA01 (odd) we allow odd numbers 1, 3, 5, …, 127.
+# For odd (MARKAA01) we allow odd numbers 1, 3, 5, …, 127.
 allowed_odd = list(range(1, 128, 2))
 
-# Global usage dictionaries – candidate values used so far (lower count = more likely)
+# Global usage dictionaries – candidate values used so far (lower usage => more likely)
 usage_even = {num: 0 for num in allowed_even}
 usage_odd = {num: 0 for num in allowed_odd}
 
@@ -31,60 +31,64 @@ def save_json_file(filepath, data):
 
 def linear_target(count, min_count=35, max_count=64, min_val=0, max_val=254):
     """
-    Given the total count of blocks, linearly interpolate a target value.
-    For even (MARKAA00): when count is max_count, target should be min_val;
-    when count is min_count, target should be max_val.
+    For even (MARKAA00): when count is max_count, target is min_val;
+    when count is min_count, target is max_val.
     """
-    # Clamp count to [min_count, max_count]
     count = max(min_count, min(max_count, count))
-    # Linear interpolation: higher count -> lower candidate value.
-    # Compute fraction = (count - min_count) / (max_count - min_count)
     frac = (count - min_count) / (max_count - min_count)
-    # Then target = max_val - frac*(max_val - min_val)
     return round(max_val - frac * (max_val - min_val))
 
 def linear_target_odd(count, min_count=35, max_count=64, min_val=1, max_val=127):
     """
-    For odd (MARKAA01): when count is max_count, target should be min_val;
-    when count is min_count, target should be max_val.
+    For odd (MARKAA01): when count is max_count, target is min_val;
+    when count is min_count, target is max_val.
     """
     count = max(min_count, min(max_count, count))
     frac = (count - min_count) / (max_count - min_count)
     return round(max_val - frac * (max_val - min_val))
 
 def adjust_parity(candidate, desired_parity):
-    # desired_parity: 0 for even, 1 for odd.
+    # Ensure candidate has the desired parity: 0 for even, 1 for odd.
     if candidate % 2 != desired_parity:
-        # Adjust by one (if candidate is 0 and we want even, that's fine; otherwise add 1)
         candidate += 1
     return candidate
 
-def choose_candidate(target, allowed, usage_dict, delta=5):
+def choose_candidate(target, allowed, usage_dict, delta_low, delta_high):
     """
-    Given a target value, allowed candidate list, usage dict, and a delta range,
-    create a candidate pool of numbers within ±delta of target (and that are in allowed).
-    Then choose one candidate weighted by 1/(1+usage).
+    Build a candidate pool from allowed numbers in the range
+    [target - delta_low, target + delta_high] and choose one
+    weighted inversely by its usage.
     """
-    # Build candidate pool: numbers in allowed with abs(candidate-target) <= delta.
-    pool = [num for num in allowed if abs(num - target) <= delta]
+    lower_bound = target - delta_low
+    upper_bound = target + delta_high
+    pool = [num for num in allowed if lower_bound <= num <= upper_bound]
     if not pool:
-        # If empty, expand delta by 1 and try again.
-        d = delta
-        while not pool and d < max(allowed):
-            d += 1
-            pool = [num for num in allowed if abs(num - target) <= d]
-    # Compute weights: lower usage -> higher weight.
+        d_low, d_high = delta_low, delta_high
+        while not pool and (d_low < max(allowed) or d_high < max(allowed)):
+            d_low += 5
+            d_high += 5
+            lower_bound = target - d_low
+            upper_bound = target + d_high
+            pool = [num for num in allowed if lower_bound <= num <= upper_bound]
     weights = [1 / (1 + usage_dict[num]) for num in pool]
     chosen = random.choices(pool, weights=weights, k=1)[0]
-    # Increment usage.
     usage_dict[chosen] += 1
     return chosen
+
+def format_candidate(candidate):
+    """
+    If candidate is a single digit, pad with a leading 0.
+    Otherwise, return the candidate as a string.
+    """
+    if candidate < 10:
+        return f"0{candidate}"
+    return f"{candidate}"
 
 def process_location_file(filepath):
     data = load_json_file(filepath)
     if not data:
         return False
-    # Navigate to BlockNames array: data["Exterior"]["ExteriorData"]["BlockNames"]
+
     exterior = data.get("Exterior", {})
     ext_data = exterior.get("ExteriorData", {})
     blocknames = ext_data.get("BlockNames")
@@ -92,35 +96,59 @@ def process_location_file(filepath):
         return False
 
     total_blocks = len(blocknames)
+    # Rule 1: if there are exactly 64 BlockNames, leave MARKAA00 and MARKAA01 unchanged.
+    if total_blocks == 64:
+        return False
+
     changed = False
 
-    # Process each element of blocknames.
-    # We assume that if an element equals exactly "MARKAA00.RMB" or "MARKAA01.RMB",
-    # we replace it.
+    # Determine adjustments common to the location.
+    port_val = ext_data.get("PortTownAndUnknown", 0)
+    is_capital = (data.get("Name") and data.get("RegionName") and data["Name"] == data["RegionName"])
+
+    # Process each block name.
     for i, name in enumerate(blocknames):
         if name == "MARKAA00.RMB":
-            # Compute target for even numbers using linear mapping.
             base = linear_target(total_blocks, min_val=0, max_val=254)
-            target = adjust_parity(base, 0)  # ensure even
-            candidate = choose_candidate(target, allowed_even, usage_even, delta=5)
-            new_name = f"MARKAA00-{candidate:03d}.RMB"
+            target = adjust_parity(base, 0)
+            # For even, use a random range of ±10.
+            candidate = choose_candidate(target, allowed_even, usage_even, delta_low=10, delta_high=10)
+            # Adjustment: subtract 20 for port and an additional 20 for capital.
+            adjustment = 0
+            if isinstance(port_val, (int, float)) and port_val > 0:
+                adjustment += 20
+            if is_capital:
+                adjustment += 20
+            candidate_adjusted = candidate - adjustment
+            # Clamp to minimum allowed (0 for even)
+            if candidate_adjusted < allowed_even[0]:
+                candidate_adjusted = allowed_even[0]
+            new_name = f"MARKAA{format_candidate(candidate_adjusted)}.RMB"
             blocknames[i] = new_name
             changed = True
         elif name == "MARKAA01.RMB":
             base = linear_target_odd(total_blocks, min_val=1, max_val=127)
-            target = adjust_parity(base, 1)  # ensure odd
-            candidate = choose_candidate(target, allowed_odd, usage_odd, delta=5)
-            new_name = f"MARKAA01-{candidate:03d}.RMB"
+            target = adjust_parity(base, 1)
+            # For odd, use a random range of ±6.
+            candidate = choose_candidate(target, allowed_odd, usage_odd, delta_low=6, delta_high=6)
+            adjustment = 0
+            if isinstance(port_val, (int, float)) and port_val > 0:
+                adjustment += 10
+            if is_capital:
+                adjustment += 10
+            candidate_adjusted = candidate - adjustment
+            # Clamp to minimum allowed (1 for odd)
+            if candidate_adjusted < allowed_odd[0]:
+                candidate_adjusted = allowed_odd[0]
+            new_name = f"MARKAA{format_candidate(candidate_adjusted)}.RMB"
             blocknames[i] = new_name
             changed = True
 
     if changed:
-        # Save changes (overwrite original file)
         save_json_file(filepath, data)
     return changed
 
 def process_all_locations():
-    # Look for files matching location*.json (case-insensitive could be added if needed)
     files = glob.glob("location*.json")
     if not files:
         print("No location*.json files found.")
