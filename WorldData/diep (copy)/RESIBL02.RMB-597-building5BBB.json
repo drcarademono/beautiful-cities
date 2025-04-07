@@ -15,7 +15,19 @@
                 "NumPeopleRecords": 0,
                 "NumDoorRecords": 0
             },
-            "Block3dObjectRecords": [],
+            "Block3dObjectRecords": [
+                {
+                    "ModelId": "704",
+                    "ModelIdNum": 704,
+                    "ObjectType": 4,
+                    "XPos": 0,
+                    "YPos": 0,
+                    "ZPos": 0,
+                    "XRotation": 0,
+                    "YRotation": 0,
+                    "ZRotation": 0
+                }
+            ],
             "BlockFlatObjectRecords": [],
             "BlockSection3Records": [],
             "BlockPeopleRecords": [],
@@ -1981,8 +1993,8 @@
                     "YPos": -56,
                     "ZPos": -98,
                     "XScale": 0.5000002,
-                    "YScale": 0.8000007,
-                    "ZScale": 0.5143205,
+                    "YScale": 0.800001,
+                    "ZScale": 0.5143208,
                     "XRotation": 0,
                     "YRotation": -774,
                     "ZRotation": -512
@@ -2019,7 +2031,7 @@
                     "YPos": -61,
                     "ZPos": -106,
                     "YScale": 1.03,
-                    "ZScale": 0.8466607,
+                    "ZScale": 0.8466611,
                     "XRotation": 0,
                     "YRotation": -774,
                     "ZRotation": -512
@@ -2117,7 +2129,7 @@
                     "XPos": -99,
                     "YPos": -55,
                     "ZPos": -495,
-                    "YScale": 0.8999998,
+                    "YScale": 0.8999996,
                     "ZScale": 0.4999999,
                     "XRotation": -512,
                     "YRotation": -512,
@@ -2471,7 +2483,7 @@
                     "XPos": -311,
                     "YPos": -34,
                     "ZPos": 188,
-                    "TextureArchive": 10027,
+                    "TextureArchive": 1027,
                     "TextureRecord": 0,
                     "FactionID": 0,
                     "Flags": 0
@@ -2591,9 +2603,9 @@
             "BlockPeopleRecords": [
                 {
                     "Position": 6928,
-                    "XPos": -356,
+                    "XPos": -386,
                     "YPos": -2,
-                    "ZPos": 342,
+                    "ZPos": 310,
                     "TextureArchive": 184,
                     "TextureRecord": 18,
                     "FactionID": 0,
