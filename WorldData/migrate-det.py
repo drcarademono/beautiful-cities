@@ -45,7 +45,7 @@ def update_texture_archives(obj):
     changed = False
     if isinstance(obj, dict):
         for key, value in obj.items():
-            if key == "TextureArchive" and isinstance(value, int) and 1002 <= value <= 1070:
+            if key == "TextureArchive" and isinstance(value, int) and 1000 <= value <= 1070:
                 obj[key] = value + 9000
                 changed = True
             else:

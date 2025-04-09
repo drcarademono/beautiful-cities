@@ -82,8 +82,8 @@ def replace_with_house(rmb_data, subrecord_index, house_data):
     house_exterior = house_data.get("RmbSubRecord", {}).get("Exterior", {})
     house_interior = house_data.get("RmbSubRecord", {}).get("Interior", {})
 
-    if "Exterior" in original_subrecord:
-        updated_subrecord["Exterior"] = merge_exteriors(original_subrecord["Exterior"], house_exterior)
+    #if "Exterior" in original_subrecord:
+    #    updated_subrecord["Exterior"] = merge_exteriors(original_subrecord["Exterior"], house_exterior)
 
     if "Interior" in original_subrecord:
         updated_subrecord["Interior"] = house_interior
@@ -99,12 +99,12 @@ def process_rmb_files(buildings_dir="buildings", diep_dir="diep"):
         152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 200, 201, 202,
         203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 320, 321,
         324, 326, 327, 328, 330, 332, 334, 335, 336, 337, 338, 339, 340, 421, 535,
-        538, 539, 541, 544, 546, 547, 548, 549, 552, 562, 602, 605, 606, 608, 610,
+        538, 539, 541, 543, 544, 546, 547, 548, 549, 552, 562, 602, 605, 606, 608, 610,
         614, 658, 659, 663, 702, 704, 705, 707, 708, 709
     }
 
     # Group DIEP files by ModelId
-    diep_files = [file for file in os.listdir(diep_dir) if re.match(r"diep-(\d+)-\d+\.json", file)]
+    diep_files = [file for file in os.listdir(diep_dir) if re.match(r"diep-(\d+)-\d+\.json", file) and not file.endswith(".meta")]
     diep_by_model_id = {}
     for f in diep_files:
         match = re.match(r"diep-(\d+)-\d+\.json", f)
