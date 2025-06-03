@@ -45,7 +45,7 @@ def process_file(path):
                     new_line = re.sub(r'("YPos"\s*:\s*)2\b', r'\1 0', line)
                 else:
                     # for all other ModelIds, bump 0 or 1 to 2
-                    new_line = re.sub(r'("YPos"\s*:\s*)(?:0|1)\b', r'\1 2', line)
+                    new_line = re.sub(r'("YPos"\s*:\s*)(?:0|1)\b', r'\1 1', line)
                 if new_line is not line:
                     line = new_line
 

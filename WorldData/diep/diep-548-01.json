@@ -4,9 +4,9 @@
     "Quality": 10,
     "NameSeed": 0,
     "RmbSubRecord": {
-        "XPos": 2048,
-        "ZPos": 3520,
-        "YRotation": 1536,
+        "XPos": 1664,
+        "ZPos": 1600,
+        "YRotation": 1024,
         "Exterior": {
             "Header": {
                 "Num3dObjectRecords": 1,
@@ -668,7 +668,7 @@
                     "ModelIdNum": 42084,
                     "ObjectType": 0,
                     "XPos": 138,
-                    "YPos": -11,
+                    "YPos": -13,
                     "ZPos": -254,
                     "XRotation": 0,
                     "YRotation": -1536,
@@ -757,7 +757,7 @@
                     "ZPos": 278,
                     "XScale": 0.27487,
                     "YScale": 0.68878,
-                    "ZScale": 0.86648,
+                    "ZScale": 0.8664799,
                     "XRotation": 0,
                     "YRotation": -256,
                     "ZRotation": 0
@@ -918,7 +918,7 @@
                 },
                 {
                     "Position": 0,
-                    "XPos": 132,
+                    "XPos": 174,
                     "YPos": -1,
                     "ZPos": -132,
                     "TextureArchive": 199,
@@ -1131,22 +1131,32 @@
             ],
             "BlockPeopleRecords": [
                 {
-                    "Position": 7114,
+                    "Position": 4298,
                     "XPos": -72,
-                    "YPos": 0,
+                    "YPos": -2,
                     "ZPos": 128,
-                    "TextureArchive": 184,
-                    "TextureRecord": 20,
+                    "TextureArchive": 182,
+                    "TextureRecord": 23,
                     "FactionID": 0,
                     "Flags": 9
                 },
                 {
-                    "Position": 7115,
+                    "Position": 4299,
                     "XPos": 58,
                     "YPos": -1,
                     "ZPos": 224,
                     "TextureArchive": 182,
                     "TextureRecord": 52,
+                    "FactionID": 0,
+                    "Flags": 0
+                },
+                {
+                    "Position": 4300,
+                    "XPos": 68,
+                    "YPos": -2,
+                    "ZPos": -152,
+                    "TextureArchive": 182,
+                    "TextureRecord": 45,
                     "FactionID": 0,
                     "Flags": 0
                 }

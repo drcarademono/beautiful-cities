@@ -4,9 +4,9 @@
     "Quality": 5,
     "NameSeed": 0,
     "RmbSubRecord": {
-        "XPos": 256,
-        "ZPos": 3584,
-        "YRotation": 512,
+        "XPos": 768,
+        "ZPos": 1152,
+        "YRotation": 0,
         "Exterior": {
             "Header": {
                 "Num3dObjectRecords": 1,
@@ -229,7 +229,8 @@
                     "ObjectType": 13,
                     "XPos": -62,
                     "YPos": 0,
-                    "ZPos": 62,
+                    "ZPos": 63,
+                    "XScale": 1.02,
                     "XRotation": 0,
                     "YRotation": -512,
                     "ZRotation": 0
@@ -436,7 +437,7 @@
                 {
                     "Position": 0,
                     "XPos": -64,
-                    "YPos": 0,
+                    "YPos": -2,
                     "ZPos": 64,
                     "TextureArchive": 199,
                     "TextureRecord": 8,
@@ -508,7 +509,7 @@
             ],
             "BlockPeopleRecords": [
                 {
-                    "Position": 4357,
+                    "Position": 1925,
                     "XPos": -28,
                     "YPos": 0,
                     "ZPos": 176,

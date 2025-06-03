@@ -4,9 +4,9 @@
     "Quality": 6,
     "NameSeed": 0,
     "RmbSubRecord": {
-        "XPos": 1024,
-        "ZPos": 1728,
-        "YRotation": 512,
+        "XPos": 2944,
+        "ZPos": 3648,
+        "YRotation": 0,
         "Exterior": {
             "Header": {
                 "Num3dObjectRecords": 1,
@@ -771,7 +771,7 @@
                     "ObjectType": 0,
                     "XPos": -135,
                     "YPos": -90,
-                    "ZPos": 62,
+                    "ZPos": 126,
                     "XRotation": 0,
                     "YRotation": -1536,
                     "ZRotation": 0
@@ -799,12 +799,12 @@
                     "ZRotation": 0
                 },
                 {
-                    "ModelId": "41105",
-                    "ModelIdNum": 41105,
+                    "ModelId": "41106",
+                    "ModelIdNum": 41106,
                     "ObjectType": 0,
-                    "XPos": -21,
-                    "YPos": -16,
-                    "ZPos": 128,
+                    "XPos": -146,
+                    "YPos": -15,
+                    "ZPos": 36,
                     "XRotation": 0,
                     "YRotation": -512,
                     "ZRotation": 0
@@ -918,7 +918,7 @@
                     "XPos": 30,
                     "YPos": -266,
                     "ZPos": -126,
-                    "YScale": 0.94473,
+                    "YScale": 0.9447299,
                     "XRotation": 0,
                     "YRotation": -1024,
                     "ZRotation": -170
@@ -981,7 +981,7 @@
                     "XPos": 30,
                     "YPos": -262,
                     "ZPos": 2,
-                    "YScale": 0.94473,
+                    "YScale": 0.9447299,
                     "XRotation": 0,
                     "YRotation": -1024,
                     "ZRotation": -170
@@ -1044,7 +1044,7 @@
                     "XPos": 30,
                     "YPos": -266,
                     "ZPos": 124,
-                    "YScale": 0.94473,
+                    "YScale": 0.9447299,
                     "XRotation": 0,
                     "YRotation": -1024,
                     "ZRotation": -170
@@ -1107,7 +1107,7 @@
                     "XPos": 30,
                     "YPos": -266,
                     "ZPos": -252,
-                    "YScale": 0.94473,
+                    "YScale": 0.9447299,
                     "XRotation": 0,
                     "YRotation": -1024,
                     "ZRotation": -170
@@ -1170,7 +1170,7 @@
                     "XPos": 30,
                     "YPos": -266,
                     "ZPos": 250,
-                    "YScale": 0.94473,
+                    "YScale": 0.9447299,
                     "XRotation": 0,
                     "YRotation": -1024,
                     "ZRotation": -170
@@ -1225,14 +1225,39 @@
                     "XRotation": 0,
                     "YRotation": -1024,
                     "ZRotation": -85
+                },
+                {
+                    "ModelId": "45190",
+                    "ModelIdNum": 45190,
+                    "ObjectType": 0,
+                    "XPos": -176,
+                    "YPos": 0,
+                    "ZPos": -175,
+                    "XRotation": 0,
+                    "YRotation": 0,
+                    "ZRotation": 0
+                },
+                {
+                    "ModelId": "41113",
+                    "ModelIdNum": 41113,
+                    "ObjectType": 0,
+                    "XPos": -132,
+                    "YPos": -14,
+                    "ZPos": -168,
+                    "XScale": 1.3,
+                    "YScale": 1.3,
+                    "ZScale": 1.3,
+                    "XRotation": 0,
+                    "YRotation": 0,
+                    "ZRotation": 0
                 }
             ],
             "BlockFlatObjectRecords": [
                 {
                     "Position": 0,
-                    "XPos": -104,
+                    "XPos": -106,
                     "YPos": -1,
-                    "ZPos": 78,
+                    "ZPos": 82,
                     "TextureArchive": 214,
                     "TextureRecord": 10,
                     "FactionID": 0,
@@ -1520,9 +1545,9 @@
                 },
                 {
                     "Position": 0,
-                    "XPos": -62,
+                    "XPos": -48,
                     "YPos": -1,
-                    "ZPos": 142,
+                    "ZPos": 126,
                     "TextureArchive": 199,
                     "TextureRecord": 11,
                     "FactionID": 0,
@@ -1535,6 +1560,16 @@
                     "ZPos": -264,
                     "TextureArchive": 199,
                     "TextureRecord": 4,
+                    "FactionID": 0,
+                    "Flags": 0
+                },
+                {
+                    "Position": 0,
+                    "XPos": -192,
+                    "YPos": -80,
+                    "ZPos": 118,
+                    "TextureArchive": 210,
+                    "TextureRecord": 13,
                     "FactionID": 0,
                     "Flags": 0
                 }
@@ -1723,14 +1758,24 @@
             ],
             "BlockPeopleRecords": [
                 {
-                    "Position": 3270,
-                    "XPos": 70,
-                    "YPos": -1,
-                    "ZPos": -200,
+                    "Position": 6598,
+                    "XPos": 94,
+                    "YPos": -2,
+                    "ZPos": -176,
                     "TextureArchive": 184,
                     "TextureRecord": 19,
                     "FactionID": 0,
                     "Flags": 41
+                },
+                {
+                    "Position": 6599,
+                    "XPos": 42,
+                    "YPos": -2,
+                    "ZPos": 248,
+                    "TextureArchive": 184,
+                    "TextureRecord": 24,
+                    "FactionID": 0,
+                    "Flags": 0
                 }
             ],
             "BlockDoorRecords": [

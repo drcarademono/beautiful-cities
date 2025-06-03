@@ -4,9 +4,9 @@
     "Quality": 4,
     "NameSeed": 0,
     "RmbSubRecord": {
-        "XPos": 1280,
-        "ZPos": 3520,
-        "YRotation": 1536,
+        "XPos": 512,
+        "ZPos": 448,
+        "YRotation": 512,
         "Exterior": {
             "Header": {
                 "Num3dObjectRecords": 1,
@@ -30,7 +30,7 @@
             ],
             "BlockFlatObjectRecords": [
                 {
-                    "Position": 6342,
+                    "Position": 1478,
                     "XPos": 3456,
                     "YPos": -8,
                     "ZPos": 1152,
@@ -58,7 +58,7 @@
                     "ModelIdNum": 8700,
                     "ObjectType": 13,
                     "XPos": 61,
-                    "YPos": -63,
+                    "YPos": -65,
                     "ZPos": -128,
                     "XRotation": 0,
                     "YRotation": -1536,
@@ -69,7 +69,7 @@
                     "ModelIdNum": 8700,
                     "ObjectType": 13,
                     "XPos": 61,
-                    "YPos": -63,
+                    "YPos": -65,
                     "ZPos": 0,
                     "XRotation": 0,
                     "YRotation": -1536,
@@ -80,7 +80,7 @@
                     "ModelIdNum": 3700,
                     "ObjectType": 13,
                     "XPos": -3,
-                    "YPos": -64,
+                    "YPos": -66,
                     "ZPos": 0,
                     "XRotation": 0,
                     "YRotation": 0,
@@ -91,7 +91,7 @@
                     "ModelIdNum": 3700,
                     "ObjectType": 13,
                     "XPos": -3,
-                    "YPos": -64,
+                    "YPos": -66,
                     "ZPos": -128,
                     "XRotation": 0,
                     "YRotation": 0,
@@ -142,11 +142,11 @@
                     "ZRotation": 0
                 },
                 {
-                    "ModelId": "4700",
-                    "ModelIdNum": 4700,
+                    "ModelId": "4704",
+                    "ModelIdNum": 4704,
                     "ObjectType": 13,
                     "XPos": -7,
-                    "YPos": -64,
+                    "YPos": -66,
                     "ZPos": -64,
                     "XRotation": 0,
                     "YRotation": -512,
@@ -289,7 +289,7 @@
                     "ModelIdNum": 41803,
                     "ObjectType": 3,
                     "XPos": 100,
-                    "YPos": 0,
+                    "YPos": 2,
                     "ZPos": -35,
                     "XRotation": 0,
                     "YRotation": -1535,
@@ -321,9 +321,9 @@
                     "ModelId": "41037",
                     "ModelIdNum": 41037,
                     "ObjectType": 0,
-                    "XPos": 53,
+                    "XPos": 56,
                     "YPos": -36,
-                    "ZPos": 78,
+                    "ZPos": 80,
                     "XRotation": 0,
                     "YRotation": 0,
                     "ZRotation": 0
@@ -344,7 +344,7 @@
                     "ModelIdNum": 41044,
                     "ObjectType": 3,
                     "XPos": 57,
-                    "YPos": 1,
+                    "YPos": 3,
                     "ZPos": -81,
                     "XRotation": 0,
                     "YRotation": 0,
@@ -355,7 +355,7 @@
                     "ModelIdNum": 41102,
                     "ObjectType": 0,
                     "XPos": 94,
-                    "YPos": -16,
+                    "YPos": -18,
                     "ZPos": -114,
                     "XRotation": 0,
                     "YRotation": -1808,
@@ -365,8 +365,8 @@
                     "ModelId": "41024",
                     "ModelIdNum": 41024,
                     "ObjectType": 0,
-                    "XPos": 27,
-                    "YPos": -37,
+                    "XPos": 30,
+                    "YPos": -39,
                     "ZPos": -169,
                     "XRotation": 0,
                     "YRotation": -31,
@@ -388,7 +388,7 @@
                     "ModelIdNum": 69423,
                     "ObjectType": 0,
                     "XPos": 68,
-                    "YPos": -74,
+                    "YPos": -76,
                     "ZPos": -184,
                     "XRotation": -1536,
                     "YRotation": -511,
@@ -399,7 +399,7 @@
                     "ModelIdNum": 42069,
                     "ObjectType": 0,
                     "XPos": 80,
-                    "YPos": -11,
+                    "YPos": -13,
                     "ZPos": 18,
                     "XRotation": 0,
                     "YRotation": -1024,
@@ -426,7 +426,7 @@
                     "YPos": -54,
                     "ZPos": 122,
                     "YScale": 0.79729,
-                    "ZScale": 0.76182,
+                    "ZScale": 0.7618201,
                     "XRotation": 0,
                     "YRotation": -769,
                     "ZRotation": -509
@@ -485,6 +485,17 @@
                     "XRotation": 0,
                     "YRotation": -768,
                     "ZRotation": 0
+                },
+                {
+                    "ModelId": "41813",
+                    "ModelIdNum": 41813,
+                    "ObjectType": 0,
+                    "XPos": 17,
+                    "YPos": -13,
+                    "ZPos": 84,
+                    "XRotation": 0,
+                    "YRotation": 0,
+                    "ZRotation": 0
                 }
             ],
             "BlockFlatObjectRecords": [
@@ -501,7 +512,7 @@
                 {
                     "Position": 0,
                     "XPos": 64,
-                    "YPos": -89,
+                    "YPos": -91,
                     "ZPos": -128,
                     "TextureArchive": 210,
                     "TextureRecord": 27,
@@ -521,8 +532,8 @@
                 {
                     "Position": 0,
                     "XPos": -64,
-                    "YPos": 0,
-                    "ZPos": -128,
+                    "YPos": -4,
+                    "ZPos": -126,
                     "TextureArchive": 199,
                     "TextureRecord": 8,
                     "FactionID": 0,
@@ -531,7 +542,7 @@
                 {
                     "Position": 0,
                     "XPos": -91,
-                    "YPos": -28,
+                    "YPos": -24,
                     "ZPos": -159,
                     "TextureArchive": 204,
                     "TextureRecord": 4,
@@ -580,9 +591,9 @@
                 },
                 {
                     "Position": 0,
-                    "XPos": 98,
+                    "XPos": 102,
                     "YPos": -3,
-                    "ZPos": 88,
+                    "ZPos": 86,
                     "TextureArchive": 205,
                     "TextureRecord": 0,
                     "FactionID": 0,
@@ -590,9 +601,9 @@
                 },
                 {
                     "Position": 0,
-                    "XPos": -4,
+                    "XPos": -2,
                     "YPos": -2,
-                    "ZPos": 108,
+                    "ZPos": 150,
                     "TextureArchive": 201,
                     "TextureRecord": 8,
                     "FactionID": 0,
@@ -600,18 +611,8 @@
                 },
                 {
                     "Position": 0,
-                    "XPos": 62,
-                    "YPos": -3,
-                    "ZPos": 164,
-                    "TextureArchive": 205,
-                    "TextureRecord": 10,
-                    "FactionID": 0,
-                    "Flags": 0
-                },
-                {
-                    "Position": 0,
                     "XPos": 100,
-                    "YPos": -25,
+                    "YPos": -28,
                     "ZPos": -34,
                     "TextureArchive": 56790,
                     "TextureRecord": 23,
@@ -621,7 +622,7 @@
                 {
                     "Position": 0,
                     "XPos": 71,
-                    "YPos": -1,
+                    "YPos": -3,
                     "ZPos": -156,
                     "TextureArchive": 199,
                     "TextureRecord": 11,
@@ -631,7 +632,7 @@
                 {
                     "Position": 0,
                     "XPos": 70,
-                    "YPos": -16,
+                    "YPos": -20,
                     "ZPos": 16,
                     "TextureArchive": 199,
                     "TextureRecord": 18,
@@ -645,6 +646,16 @@
                     "ZPos": 134,
                     "TextureArchive": 199,
                     "TextureRecord": 4,
+                    "FactionID": 0,
+                    "Flags": 0
+                },
+                {
+                    "Position": 0,
+                    "XPos": 84,
+                    "YPos": -3,
+                    "ZPos": 106,
+                    "TextureArchive": 205,
+                    "TextureRecord": 0,
                     "FactionID": 0,
                     "Flags": 0
                 }
@@ -678,7 +689,7 @@
             ],
             "BlockPeopleRecords": [
                 {
-                    "Position": 6340,
+                    "Position": 1476,
                     "XPos": -64,
                     "YPos": 0,
                     "ZPos": -72,
@@ -688,36 +699,17 @@
                     "Flags": 1
                 },
                 {
-                    "Position": 6341,
-                    "XPos": 30,
+                    "Position": 1477,
+                    "XPos": 32,
                     "YPos": -4,
-                    "ZPos": 124,
+                    "ZPos": 166,
                     "TextureArchive": 184,
                     "TextureRecord": 18,
                     "FactionID": 0,
                     "Flags": 0
                 }
             ],
-            "BlockDoorRecords": [
-                {
-                    "Position": 0,
-                    "XPos": 2,
-                    "YPos": -46,
-                    "ZPos": -104,
-                    "YRotation": -512,
-                    "OpenRotation": 97,
-                    "DoorModelIndex": 0
-                },
-                {
-                    "Position": 1,
-                    "XPos": 4,
-                    "YPos": -46,
-                    "ZPos": 24,
-                    "YRotation": -512,
-                    "OpenRotation": 97,
-                    "DoorModelIndex": 0
-                }
-            ]
+            "BlockDoorRecords": []
         }
     },
     "AutoMapData": null
